@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mockup Portrait</title>
+        <link rel="stylesheet" href="styles.css">
+        
+        <script src="element.js" defer></script>
+        <script src="game.js" defer></script>
+        <script src="script.js" defer></script>
+        <script src="solver.js" defer></script>
+    </head>
+    <body>
+        <div id="topBand">
+            <div id = "back" class ="topElement imgContain">
+                <img src="../../Ressources/back.png" alt="back button" />
+            </div>
+            <div id ="opt" class ="topElement imgContain">
+                <img src="../../Ressources/opt.png" alt="option button" />
+            </div>
+            <div id ="score" class="topElement">0</div>
+            <div id = "stepSection" class ="topElement">
+                <div class ="subTopElement">Step</div>
+                <div id="step" class ="subTopElement">1</div>
+            </div>
+            <div id ="highSection" class ="topElement">
+                <div class ="subTopElement">High score</div>
+                <div id="highScore"  class ="subTopElement">0</div>
+            </div>
+        </div>
+        <div id="content">
+            <table class="grid-table">
+              <tbody>
+
+              </tbody>
+            </table>
+        </div>
+        <div id="botBand">
+            <div id = "add" class ="botElement ">
+                <button id ="addBtn">
+                    <img src="../../Ressources/add.png" alt="add button" />
+                </button>
+                <div id ="life" class ="botTag">5</div>
+            </div>
+            <div id ="help" class="botElement ">
+                <button id="help">
+                    <img src="../../Ressources/help.png" alt="help button" />
+                </button>
+
+            </div>
+        </div>
+        <div id="topTrans"></div>
+        <div id="botTrans"></div>
+    </body>
+</html>

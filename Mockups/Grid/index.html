@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal Width TD with Aspect Ratio</title>
+    <style>
+        table {
+            width: 100%; /* Le tableau prend toute la largeur */
+            border-collapse: collapse; /* Supprime les espaces entre les cellules */
+        }
+
+        tr {
+            display: flex; /* Transforme les lignes en conteneurs flexibles */
+        }
+
+        td {
+            flex: 1; /* Chaque cellule occupe une part égale de la largeur */
+            aspect-ratio: 1 / 1; /* Hauteur égale à la largeur pour chaque cellule */
+            background-color: lightblue; /* Couleur pour visualisation */
+            border: 1px solid #000; /* Bordure pour visualiser les cellules */
+            display: flex; /* Permet d'aligner le contenu correctement */
+            align-items: center; /* Aligne verticalement le contenu */
+            justify-content: center; /* Aligne horizontalement le contenu */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+</body>
+</html>

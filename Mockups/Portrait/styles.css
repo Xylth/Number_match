@@ -1,0 +1,230 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow:hidden; /* Empêche le défilement */
+}
+
+#topBand {
+    background-color: rgb(255, 255, 255);
+    height: 20vh; /* 20% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr; /* Divise en trois lignes égales */
+    grid-template-columns: 1fr 1fr 1fr; /* Divise en trois colonnes égales */
+}
+
+#topTrans{
+    background:linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 20vh; /* Distance du haut du conteneur */
+    left: 0px; /* Distance de la gauche du conteneur */
+    height: 2vh; /* 20% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+
+}
+
+.imgContain img {
+    width: auto;  /* L'image prendra toute la largeur du div */
+    height: 5vh; /* L'image gardera ses proportions */
+  }
+
+.topElement {
+    display: flex; /* Flexbox pour aligner le contenu */
+    align-items: center; /* Centre verticalement */
+    font-size: 5vh;
+    color:black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#back {
+    justify-content: flex-start; /* Aligner à gauche */
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#opt {
+    justify-content: flex-end; /* Aligner à droite */
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#score {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: center; /* Par défaut : centre horizontal */
+}
+
+#stepSection {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: column;
+    align-items: flex-start; 
+    
+}
+
+#highSection {
+    grid-column: 3;
+    grid-row: 3;
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.subTopElement{
+    font:normal;
+    font-size: 2vh;
+    color:gray;
+}
+
+#botBand {
+    background-color: rgb(255, 255, 255);
+    height: 15vh; /* 15% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content:space-evenly; /* Aligne horizontalement le contenu */
+    
+}
+
+.botElement {
+    position: relative; /* Permet de positionner les éléments enfants par rapport à ce div */
+}
+
+.botElement img {
+    width: auto;
+    height: 8vh; /* L'image gardera ses proportions */
+}
+
+.botTag {
+    position: absolute;  /* Positionnement absolu par rapport à `.botElement` */
+    top: 0;              /* L'élément est collé en haut du conteneur */
+    right: 0;             /* L'élément est collé à gauche du conteneur */
+    background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
+    color: white;        /* Texte en blanc */
+    padding: 1vh;        /* Un peu de padding autour du texte */
+    border-radius: 50%;  /* Pour rendre le tag circulaire */
+    width: 1vh;         /* Largeur du tag */
+    height: 1vh;        /* Hauteur du tag */
+    display: flex;       /* Utilisation de flexbox pour centrer le texte */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;     /* Centrer verticalement */
+    font-size: 2vh;      /* Taille du texte */
+}
+
+#botTrans{
+    background:linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    position: absolute;
+    bottom: 15vh; /* Distance du haut du conteneur */
+    left: 0px; /* Distance de la gauche du conteneur */
+    height: 2vh; /* 20% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+
+}
+
+#content {
+    background-color: rgb(255, 255, 255);
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    overflow-y: auto; /* Permet au contenu de défiler verticalement */
+    
+    
+}
+
+#help {
+    background-color: rgb(255, 255, 255);
+    
+    border: none;
+    
+}
+
+#addBtn[status="0"] {
+    background-color: rgb(255, 255, 255);
+    
+    border: none;
+    
+}
+
+#addBtn[status="1"] {
+    background-color: gray; /* Couleur pour visualisation */
+    border: none;
+    
+}
+
+
+.grid-table {
+    border: 2px solid black;
+    width: 100%; /* Le tableau prend toute la largeur */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+}
+
+.grid-table tr {
+    display: flex; /* Transforme les lignes en conteneurs flexibles */
+}
+
+
+.grid-table td {
+    flex: 1; /* Chaque cellule occupe une part égale de la largeur */
+    aspect-ratio: 1 / 1; /* Hauteur égale à la largeur pour chaque cellule */
+    font-weight: bold;
+    
+    border: 1px solid gray;
+    display: flex; /* Permet d'aligner le contenu correctement */
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content: center; /* Aligne horizontalement le contenu */
+    font-size: 4vw;
+}
+
+td[status="0"]{/* vide */
+    background-color: white; /* Couleur pour visualisation */
+    color: white;
+}
+
+td[status="1"]{/* inactif valide */
+    background-color:white; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="2"]{ /* inactif invalide */
+    background-color:white; /* Couleur pour visualisation */
+    color: rgb(161, 159, 159);
+    font-size: 3vw;
+}
+
+td[status="3"]{ /* selection */
+    background-color: lightblue; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="4"]{ /* indice */
+    background-color: gray; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="5"]{ /* fail */
+    background-color: white; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+    /*display: inline-block;  /* Nécessaire pour appliquer transform */
+    animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
+}
+
+/* Définition de l'animation */
+@keyframes blinker {
+    0%, 100% {
+        background-color: white; /* Rétablit la couleur de fond initiale */
+    }
+    50% {
+        background-color: red; /* Change la couleur de fond en rouge */
+    }
+}
