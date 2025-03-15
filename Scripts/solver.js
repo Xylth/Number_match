@@ -6,7 +6,7 @@ function Vsolver(element){
     let bufStatus=0;
     row++;
     for(let i = row;i<114;i++){
-        let buf = getElement(i,col);
+        let buf = gr.getElementCoordinates(i,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
@@ -29,7 +29,7 @@ function Hsolver(element){
     let bufStatus=0;
     col++;
     for(let i = col;i<9;i++){
-        let buf = getElement(row,i);
+        let buf = gr.getElementCoordinates(row,i);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
@@ -59,7 +59,7 @@ function Csolver(element){
                 return;
             }
         }
-        let buf = getElement(row,col);
+        let buf = gr.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
@@ -88,7 +88,7 @@ function D1solver(element){
         if ((col>8)||(row>113)){
             return;
         }
-        let buf = getElement(row,col);
+        let buf = gr.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
@@ -117,12 +117,12 @@ function D2solver(element){
         if ((col<0)||(row>113)){
             return;
         }
-        let buf = getElement(row,col);
+        let buf = gr.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -130,7 +130,7 @@ function D2solver(element){
             }
         }
 
-    } while(bufStatus!=="0");
+    } while(bufStatus!==0);
         
 }
 
@@ -141,11 +141,11 @@ function globalSolver(){
     let solution=[];
     let result;
     do{
-        let buf = getElement(row,col);
+        let buf = gr.getElementCoordinates(row,col);
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2){
             result = Vsolver(buf);
             if (result !==undefined ){
                 solution.push(buf);
@@ -185,42 +185,57 @@ function globalSolver(){
                 return;
             }
         }
-    } while(bufStatus!=="0");
+    } while(bufStatus!==0);
 }
 
 function help(){
     let row =0;
     let col = 0;
+    let buf;
     let bufStatus=0;
     const addBtn = document.getElementById("addBtn");
+
+    clear_help();
     
     addBtn.setAttribute('status',0);
     do{
-        let buf = getElement(row,col);
+        buf = gr.getElementCoordinates(row,col);
         bufStatus=buf.getStatus();
-        if(bufStatus==="4"){
-            buf.setAttribute('status',1);
+        if(bufStatus===4){
+            buf.setStatus(1);
         }
         col++;
         if (col>8){
             col=0;
             row++;
             if(row>113){
-                bufStatus="0";
+                bufStatus=0;
             }
         }
-    } while(bufStatus!=="0");
+    } while(bufStatus!==0);
     let answer=globalSolver();
     if(answer !== undefined){
+        answer[0].setStatus(4);
         
-        let cell1 = document.querySelector(`td[row="${answer[0].getRow()}"][col="${answer[0].getCol()}"]`);
-        let cell2 = document.querySelector(`td[row="${answer[1].getRow()}"][col="${answer[1].getCol()}"]`);
-        cell1.setAttribute('status',4);
-        cell2.setAttribute('status',4);
+        answer[1].setStatus(4);
+        ga.addScore(-10);
+
     }else{
         addBtn.setAttribute('status',1);
     }
 
+}
+
+function clear_help(){
+    let buf;
+    let i=0;
+    do{
+        buf=gr.getElementChain(i);
+        if(buf.getStatus()===4){
+            buf.setStatus(1);
+        }
+        i++;
+    }while(buf.getStatus()!==0);
 }
 
 function gameOver(){

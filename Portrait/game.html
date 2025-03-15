@@ -6,27 +6,30 @@
         <title>Mockup Portrait</title>
         <link rel="stylesheet" href="styles.css">
         
-        <script src="element.js" defer></script>
-        <script src="game.js" defer></script>
-        <script src="script.js" defer></script>
-        <script src="solver.js" defer></script>
+        <script src="../Scripts/element.js" defer></script>
+        <script src="../Scripts/game.js" defer></script>
+        <script src="../Scripts/script.js" defer></script>
+        <script src="../Scripts/solver.js" defer></script>
+        <script src="../Scripts/grid.js" defer></script>
+        <script src="../Scripts/input.js" defer></script>
+        <script src="../Scripts/check.js" defer></script>
     </head>
     <body>
         <div id="topBand">
             <div id = "back" class ="topElement imgContain">
-                <img src="../../Ressources/back.png" alt="back button" />
+                <img src="../Ressources/back.png" alt="back button" />
             </div>
             <div id ="opt" class ="topElement imgContain">
-                <img src="../../Ressources/opt.png" alt="option button" />
+                <img src="../Ressources/opt.png" alt="option button" />
             </div>
-            <div id ="score" class="topElement">0</div>
+            <div id ="score" class="topElement"></div>
             <div id = "stepSection" class ="topElement">
                 <div class ="subTopElement">Step</div>
-                <div id="step" class ="subTopElement">1</div>
+                <div id="step" class ="subTopElement"></div>
             </div>
             <div id ="highSection" class ="topElement">
                 <div class ="subTopElement">High score</div>
-                <div id="highScore"  class ="subTopElement">0</div>
+                <div id="highScore"  class ="subTopElement"></div>
             </div>
         </div>
         <div id="content">
@@ -38,14 +41,14 @@
         </div>
         <div id="botBand">
             <div id = "add" class ="botElement ">
-                <button id ="addBtn">
-                    <img src="../../Ressources/add.png" alt="add button" />
+                <button id ="addBtn" status="0">
+                    <img src="../Ressources/add.png" alt="add button" />
                 </button>
-                <div id ="life" class ="botTag">5</div>
+                <div id ="life" class ="botTag"></div>
             </div>
             <div id ="help" class="botElement ">
                 <button id="help">
-                    <img src="../../Ressources/help.png" alt="help button" />
+                    <img src="../Ressources/help.png" alt="help button" />
                 </button>
 
             </div>
