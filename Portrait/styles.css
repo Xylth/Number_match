@@ -4,13 +4,11 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     overflow:hidden; /* Empêche le défilement */
 }
 
 #topBand {
     background-color: rgb(255, 255, 255);
-    height: 20vh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
     display: grid;
     grid-template-rows: 1fr 1fr 1fr; /* Divise en trois lignes égales */
@@ -20,9 +18,7 @@ body {
 #topTrans{
     background:linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
     position: absolute;
-    top: 20vh; /* Distance du haut du conteneur */
     left: 0px; /* Distance de la gauche du conteneur */
-    height: 2vh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
 
 }
@@ -84,7 +80,8 @@ body {
 
 #botBand {
     background-color: rgb(255, 255, 255);
-    height: 15vh; /* 15% de la hauteur de l'écran */
+    position: absolute;
+    bottom: 0px;
     width: 100%; /* Toute la largeur */
     display: flex; /* Flexbox pour aligner le contenu */
     flex-direction: row;
@@ -130,7 +127,6 @@ body {
 
 #content {
     background-color: rgb(255, 255, 255);
-    flex: 1;
     text-align: center;
     padding: 10px;
     overflow-y: auto; /* Permet au contenu de défiler verticalement */
