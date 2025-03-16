@@ -24,7 +24,7 @@ function adjustBanner() {
     const usableHeight = window.innerHeight; // Hauteur utilisable réelle
     const tb = document.querySelector("#topBand");
     const tt = document.querySelector("#topTrans");
-    const bt = document.querySelector("#topTrans");
+    const bt = document.querySelector("#botTrans");
     const bb = document.querySelector("#botBand");
     const ct = document.querySelector("#content");
     

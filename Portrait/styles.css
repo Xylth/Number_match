@@ -118,9 +118,7 @@ body {
 #botTrans{
     background:linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
     position: absolute;
-    bottom: 15vh; /* Distance du haut du conteneur */
     left: 0px; /* Distance de la gauche du conteneur */
-    height: 2vh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
 
 }
