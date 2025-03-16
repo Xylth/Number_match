@@ -3,6 +3,9 @@ let selectedElement=[];
 function initBtn(){
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
+    
+    const backBtn = document.getElementById("back");
+    const optBtn = document.getElementById("opt");
 
     addBtn.addEventListener("click", function() {
         addBtn.setAttribute('status',0);
@@ -15,6 +18,10 @@ function initBtn(){
     helpBtn.addEventListener("click", function() {
     
         help();
+    });
+
+    backBtn.addEventListener("click", function() {
+        window.open('https://xylth.github.io/Number_match/', '_self');
     });
 }
 

@@ -25,16 +25,12 @@ body {
 
 .imgContain img {
     width: auto;  /* L'image prendra toute la largeur du div */
-    height: 5vh; /* L'image gardera ses proportions */
   }
 
 .topElement {
     display: flex; /* Flexbox pour aligner le contenu */
     align-items: center; /* Centre verticalement */
-    font-size: 5vh;
     color:black;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #back {
@@ -95,24 +91,20 @@ body {
 }
 
 .botElement img {
-    width: auto;
-    height: 8vh; /* L'image gardera ses proportions */
+    width: auto;/* L'image gardera ses proportions */
 }
 
 .botTag {
     position: absolute;  /* Positionnement absolu par rapport à `.botElement` */
     top: 0;              /* L'élément est collé en haut du conteneur */
     right: 0;             /* L'élément est collé à gauche du conteneur */
+    width: auto;
     background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
     color: white;        /* Texte en blanc */
-    padding: 1vh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 1vh;         /* Largeur du tag */
-    height: 1vh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
-    font-size: 2vh;      /* Taille du texte */
 }
 
 #botTrans{
@@ -126,24 +118,17 @@ body {
 #content {
     background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 10px;
     overflow-y: auto; /* Permet au contenu de défiler verticalement */
-    
-    
 }
 
 #help {
     background-color: rgb(255, 255, 255);
-    
     border: none;
-    
 }
 
 #addBtn[status="0"] {
     background-color: rgb(255, 255, 255);
-    
     border: none;
-    
 }
 
 #addBtn[status="1"] {
@@ -173,7 +158,6 @@ body {
     display: flex; /* Permet d'aligner le contenu correctement */
     align-items: center; /* Aligne verticalement le contenu */
     justify-content: center; /* Aligne horizontalement le contenu */
-    font-size: 4vw;
 }
 
 td[status="0"]{/* vide */
@@ -184,31 +168,26 @@ td[status="0"]{/* vide */
 td[status="1"]{/* inactif valide */
     background-color:white; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="2"]{ /* inactif invalide */
     background-color:white; /* Couleur pour visualisation */
     color: rgb(161, 159, 159);
-    font-size: 3vw;
 }
 
 td[status="3"]{ /* selection */
     background-color: lightblue; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="4"]{ /* indice */
     background-color: gray; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="5"]{ /* fail */
     background-color: white; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
     animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
 }
