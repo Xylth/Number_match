@@ -87,18 +87,6 @@ function adjustDesign() {
     
     
     bb.style.height = (usableHeight * 0.15) + "px";
-    bb.style.bottom = "0px";
-    
-    botT.style.height = (usableHeight * 0.04) + "px"; // 50% de la hauteur du bandeau
-
-    cell.forEach(el => {
-        el.style.fontSize = (usableHeight * 0.01) + "px"; // 50% de la hauteur du bandeau        
-    });
-
-    
-    botEl.forEach(el => {
-        el.style.height = (usableHeight * 0.1) + "px"; // 50% de la hauteur du bandea       
-    });
-    
+    ct.style.height = (usableHeight * 0.65) + "px";
     
 }
