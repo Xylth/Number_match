@@ -97,7 +97,7 @@ function adjustDesign() {
 
     
     botEl.forEach(el => {
-        el.style.height = (usableHeight * 0.01) + "px"; // 50% de la hauteur du bandeau        
+        el.style.height = (usableHeight * 0.1) + "px"; // 50% de la hauteur du bandea       
     });
     
     
