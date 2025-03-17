@@ -37,4 +37,5 @@ function adjustBanner() {
     bt.style.bottom = (usableHeight * 0.15) + "px";
     bb.style.height = (usableHeight * 0.15) + "px";
     ct.style.height = (usableHeight * 0.65) + "px";
+    
 }
