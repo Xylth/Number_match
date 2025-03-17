@@ -4,33 +4,33 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     overflow:hidden; /* Empêche le défilement */
 }
 
 #topBand {
     background-color: rgb(255, 255, 255);
-    height: 20vh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr; /* Divise en trois lignes égales */
-    grid-template-columns: 1fr 1fr 1fr; /* Divise en trois colonnes égales */
+    display: absolute;
 }
 
-#topTrans{
-    background:linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
-    position: absolute;
-    top: 20vh; /* Distance du haut du conteneur */
-    left: 0px; /* Distance de la gauche du conteneur */
-    height: 2vh; /* 20% de la hauteur de l'écran */
+#topBtn {
     width: 100%; /* Toute la largeur */
-
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
 }
 
 .imgContain img {
     width: auto;  /* L'image prendra toute la largeur du div */
     height: 5vh; /* L'image gardera ses proportions */
   }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image sans déformation */
+  }
+  
 
 .topElement {
     display: flex; /* Flexbox pour aligner le contenu */
@@ -42,49 +42,70 @@ body {
 }
 
 #back {
-    justify-content: flex-start; /* Aligner à gauche */
-    grid-column: 1;
-    grid-row: 1;
+    width: auto; /* Toute la largeur */
+    justify-content: left; /* Aligner à gauche */
 }
 
+
 #opt {
-    justify-content: flex-end; /* Aligner à droite */
-    grid-column: 3;
-    grid-row: 1;
+    width: auto; /* Toute la largeur */
+    justify-content: right; /* Aligner à gauche */
 }
 
 #score {
-    grid-column: 2;
-    grid-row: 2;
-    justify-content: center; /* Par défaut : centre horizontal */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+#topBtn {
+    width: 100%; /* Toute la largeur */
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+#botdata {
+    width: 100%; /* Toute la largeur */
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
 }
 
 #stepSection {
-    grid-column: 1;
-    grid-row: 3;
+    width: 50%; /* Toute la largeur */
+    justify-content: left; /* Aligner à gauche */
     display: flex; /* Flexbox pour aligner le contenu */
-    flex-direction: column;
-    align-items: flex-start; 
-    
+    flex-direction: column;    
 }
 
 #highSection {
-    grid-column: 3;
-    grid-row: 3;
+    width: 50%; /* Toute la largeur */
+    justify-content: right; /* Aligner à gauche */
     display: flex; /* Flexbox pour aligner le contenu */
-    flex-direction: column;
-    align-items: flex-end; 
+    flex-direction: column;    
 }
+
 
 .subTopElement{
     font:normal;
-    font-size: 2vh;
     color:gray;
 }
 
+#topTrans{
+    background:linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    position: absolute;
+    left: 0px; /* Distance de la gauche du conteneur */
+    width: 100%; /* Toute la largeur */
+
+}
+
+
 #botBand {
     background-color: rgb(255, 255, 255);
-    height: 15vh; /* 15% de la hauteur de l'écran */
+    position: absolute;
+    bottom: 0px;
     width: 100%; /* Toute la largeur */
     display: flex; /* Flexbox pour aligner le contenu */
     flex-direction: row;
@@ -98,58 +119,44 @@ body {
 }
 
 .botElement img {
-    width: auto;
-    height: 8vh; /* L'image gardera ses proportions */
+    width: auto;/* L'image gardera ses proportions */
 }
 
 .botTag {
     position: absolute;  /* Positionnement absolu par rapport à `.botElement` */
     top: 0;              /* L'élément est collé en haut du conteneur */
     right: 0;             /* L'élément est collé à gauche du conteneur */
+    width: auto;
     background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
     color: white;        /* Texte en blanc */
-    padding: 1vh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 1vh;         /* Largeur du tag */
-    height: 1vh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
-    font-size: 2vh;      /* Taille du texte */
 }
 
 #botTrans{
     background:linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
     position: absolute;
-    bottom: 15vh; /* Distance du haut du conteneur */
     left: 0px; /* Distance de la gauche du conteneur */
-    height: 2vh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
 
 }
 
 #content {
     background-color: rgb(255, 255, 255);
-    flex: 1;
     text-align: center;
-    padding: 10px;
     overflow-y: auto; /* Permet au contenu de défiler verticalement */
-    
-    
 }
 
 #help {
     background-color: rgb(255, 255, 255);
-    
     border: none;
-    
 }
 
 #addBtn[status="0"] {
     background-color: rgb(255, 255, 255);
-    
     border: none;
-    
 }
 
 #addBtn[status="1"] {
@@ -179,7 +186,6 @@ body {
     display: flex; /* Permet d'aligner le contenu correctement */
     align-items: center; /* Aligne verticalement le contenu */
     justify-content: center; /* Aligne horizontalement le contenu */
-    font-size: 4vw;
 }
 
 td[status="0"]{/* vide */
@@ -190,31 +196,26 @@ td[status="0"]{/* vide */
 td[status="1"]{/* inactif valide */
     background-color:white; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="2"]{ /* inactif invalide */
     background-color:white; /* Couleur pour visualisation */
     color: rgb(161, 159, 159);
-    font-size: 3vw;
 }
 
 td[status="3"]{ /* selection */
     background-color: lightblue; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="4"]{ /* indice */
     background-color: gray; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
 }
 
 td[status="5"]{ /* fail */
     background-color: white; /* Couleur pour visualisation */
     color: black;
-    font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
     animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
 }

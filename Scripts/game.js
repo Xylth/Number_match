@@ -2,16 +2,19 @@ class game{
 
     constructor(){
         this.initGameData();
-        this.chain = new grid();
-        this.chain.fillGrid();
-
+        this.resetHighScore();
+        this.createGrid();
     }
 
     initGameData(){
         this.resetScore();
-        this.resetHighScore();
         this.resetStep();
         this.resetLife();
+    }
+
+    createGrid(){
+        this.chain = new grid();
+        this.chain.fillGrid();
     }
 
     nextStep(){
@@ -106,8 +109,8 @@ class game{
         if (val<0){
             this.life=0;
         }
-        else if (val>5){
-            this.life=5;
+        else if (val>baseLife){
+            this.life=baseLife;
         }
         else{
             this.life=val;
@@ -125,7 +128,7 @@ class game{
     }
 
     resetLife(){
-        this.life=5;
+        this.life=baseLife;
         document.querySelector('#life').innerHTML=this.life;
         return this.life;
     }
