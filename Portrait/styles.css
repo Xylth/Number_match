@@ -10,9 +10,67 @@ body {
 #topBand {
     background-color: rgb(255, 255, 255);
     width: 100%; /* Toute la largeur */
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr; /* Divise en trois lignes égales */
-    grid-template-columns: 1fr 1fr 1fr; /* Divise en trois colonnes égales */
+    display: absolute;
+}
+
+#topBtn {
+    width: 100%; /* Toute la largeur */
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+
+#back {
+    width: auto; /* Toute la largeur */
+    justify-content: left; /* Aligner à gauche */
+}
+
+
+#opt {
+    width: auto; /* Toute la largeur */
+    justify-content: right; /* Aligner à gauche */
+}
+
+#score {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+#topBtn {
+    width: 100%; /* Toute la largeur */
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+#botdata {
+    width: 100%; /* Toute la largeur */
+    display: flex;
+    justify-content: space-between; /* Aligne back à gauche et opt à droite */
+    align-items: center;
+}
+
+#stepSection {
+    width: 50%; /* Toute la largeur */
+    justify-content: left; /* Aligner à gauche */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: column;    
+}
+
+#highSection {
+    width: 50%; /* Toute la largeur */
+    justify-content: right; /* Aligner à gauche */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: column;    
+}
+
+
+.subTopElement{
+    font:normal;
+    color:gray;
 }
 
 #topTrans{
@@ -23,56 +81,6 @@ body {
 
 }
 
-.imgContain img {
-    width: auto;  /* L'image prendra toute la largeur du div */
-  }
-
-.topElement {
-    display: flex; /* Flexbox pour aligner le contenu */
-    align-items: center; /* Centre verticalement */
-    color:black;
-}
-
-#back {
-    justify-content: flex-start; /* Aligner à gauche */
-    grid-column: 1;
-    grid-row: 1;
-}
-
-#opt {
-    justify-content: flex-end; /* Aligner à droite */
-    grid-column: 3;
-    grid-row: 1;
-}
-
-#score {
-    grid-column: 2;
-    grid-row: 2;
-    justify-content: center; /* Par défaut : centre horizontal */
-}
-
-#stepSection {
-    grid-column: 1;
-    grid-row: 3;
-    display: flex; /* Flexbox pour aligner le contenu */
-    flex-direction: column;
-    align-items: flex-start; 
-    
-}
-
-#highSection {
-    grid-column: 3;
-    grid-row: 3;
-    display: flex; /* Flexbox pour aligner le contenu */
-    flex-direction: column;
-    align-items: flex-end; 
-}
-
-.subTopElement{
-    font:normal;
-    font-size: 2vh;
-    color:gray;
-}
 
 #botBand {
     background-color: rgb(255, 255, 255);
