@@ -9,9 +9,9 @@ function Vsolver(element){
         let buf = gr.getElementCoordinates(i,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if ((bufStatus===1)||(bufStatus===3)||(bufStatus===4)){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -32,9 +32,9 @@ function Hsolver(element){
         let buf = gr.getElementCoordinates(row,i);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if ((bufStatus===1)||(bufStatus===3)||(bufStatus===4)){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -64,7 +64,7 @@ function Csolver(element){
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
             return;
-        }else if (bufStatus!=="2"){
+        }else if ((bufStatus===1)||(bufStatus===3)||(bufStatus===4)){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -93,7 +93,7 @@ function D1solver(element){
         bufStatus=buf.getStatus();
         if(bufStatus==="0"){
             return;
-        }else if (bufStatus!=="2"){
+        }else if ((bufStatus===1)||(bufStatus===3)||(bufStatus===4)){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -122,7 +122,7 @@ function D2solver(element){
         bufStatus=buf.getStatus();
         if(bufStatus===0){
             return;
-        }else if (bufStatus!==2){
+        }else if ((bufStatus===1)||(bufStatus===3)||(bufStatus===4)){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
