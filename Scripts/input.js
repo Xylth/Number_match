@@ -1,5 +1,5 @@
 let selectedElement=[];
-
+//test
 function initBtn(){
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
