@@ -22,51 +22,77 @@ function init_new_game(){
 
 function adjustDesign() {
     const usableHeight = window.innerHeight; // Hauteur utilisable réelle
-    const usableWidth = window.innerWidth; // Hauteur utilisable réelle
     const tb = document.querySelector("#topBand");
+    const topbtn = document.querySelector("#topBtn");
+    const backbtn=document.querySelector("#back");
+    const optbtn=document.querySelector("#opt");
+    const backImg=document.querySelector("#back img");
+    const optImg=document.querySelector("#opt img");
+
+    const sc = document.querySelector("#score");
+
+    const botdata = document.querySelector("#botData");
+
+    const stepsec = document.querySelector("#stepSection");
+    const highsec = document.querySelector("#highSection");
+
+    const topText = document.querySelectorAll(".subTopElement");
     const tt = document.querySelector("#topTrans");
+
+    const cell = document.querySelectorAll(".td");
+    
+    const ct = document.querySelector("#content");
     const bt = document.querySelector("#botTrans");
     const bb = document.querySelector("#botBand");
-    const ct = document.querySelector("#content");
-    const sc = document.querySelector("#score");
-    const img = document.querySelectorAll(".imgContain img");
-    const topText = document.querySelectorAll(".subTopElement");
-    const botEl = document.querySelectorAll(".botElement img");
+    const botEl = document.querySelectorAll(".botElement");
     const botT = document.querySelector(".botTag");
-    const cell = document.querySelectorAll(".td");
+    
     
 
 
     tb.style.height = (usableHeight * 0.2) + "px";
+    tb.style.padding = (usableHeight * 0.01) + "px";
+    tb.style.top = "0px";
+    topbtn.style.height = (usableHeight * 0.06) + "px";
+    
+    
+    
+
+    backbtn.style.height=(usableHeight * 0.05) + "px";
+    backbtn.style.margin=(usableHeight * 0.01) + "px";
+    
+    optbtn.style.height=(usableHeight * 0.05) + "px";
+    helpBtn.style.margin=(usableHeight * 0.01) + "px";
+    backImg.style.height=(usableHeight*.05)+"px";
+    optImg.style.height=(usableHeight*.05)+"px";
+    sc.style.height=(usableHeight * 0.06) + "px";
+    sc.fontSize=(usableHeight * 0.06) + "px";
+
+    
+    stepsec.style.height = (usableHeight * 0.07) + "px";
+    highsec.style.height = (usableHeight * 0.07) + "px";
+    topText.forEach(text => {
+        text.style.fontSize = (usableHeight * 0.03) + "px"; // 50% de la hauteur du bandeau    
+    });
+
+    
     tt.style.height = (usableHeight * 0.02) + "px";
     tt.style.top = (usableHeight * 0.2) + "px";
-    bt.style.height = (usableHeight * 0.02) + "px";
-    bt.style.bottom = (usableHeight * 0.15) + "px";
-    bb.style.height = (usableHeight * 0.15) + "px";
-    
 
-    
     ct.style.height = (usableHeight * 0.65) + "px"; 
     ct.style.padding = (usableHeight * 0.05) + "px"; 
-    sc.style.fontSize = (usableHeight * 0.05) + "px"; // 50% de la hauteur du bandeau
-    img.forEach(image => {
-        image.style.height = (usableHeight * 0.05) + "px"; // 50% de la hauteur du bandeau
-        
-        image.style.padding = (usableHeight * 0.01) + "px"; // 50% de la hauteur du bandeau
-    });
-    topText.forEach(text => {
-        text.style.fontSize = (usableHeight * 0.03) + "px"; // 50% de la hauteur du bandeau
-        text.style.paddingLeft = (usableHeight * 0.02) + "px"; // 50% de la hauteur du bandeau
-        text.style.paddingRight = (usableHeight * 0.02) + "px"; // 50% de la hauteur du bandeau
-        
-    });
+
+    bt.style.height = (usableHeight * 0.02) + "px";
+    bt.style.bottom = (usableHeight * 0.15) + "px";
     
-    botT.style.fontSize = (usableHeight * 0.02) + "px"; // 50% de la hauteur du bandeau
+    
+    bb.style.height = (usableHeight * 0.15) + "px";
+    bb.style.bottom = "0px";
+    
     botT.style.height = (usableHeight * 0.04) + "px"; // 50% de la hauteur du bandeau
-    botT.style.width = (usableHeight * 0.04) + "px"; // 50% de la hauteur du bandeau
 
     cell.forEach(el => {
-        el.style.fontSize = (usableHeight * 0.1) + "px"; // 50% de la hauteur du bandeau        
+        el.style.fontSize = (usableHeight * 0.01) + "px"; // 50% de la hauteur du bandeau        
     });
 
     
