@@ -5,6 +5,8 @@ function initBtn(){
     const helpBtn = document.getElementById("help");
     const backBtn = document.getElementById("back");
 
+
+
     addBtn.addEventListener("click", function() {
         addBtn.setAttribute('status',0);
         if (ga.getLife()>0){ 
