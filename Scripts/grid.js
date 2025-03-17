@@ -3,7 +3,7 @@ class grid{
     constructor(){
         this.chain=[];
         const tableBody = document.querySelector('.grid-table tbody');
-        // Générer 114 lignes avec 9 colonne
+        // Générer 114 lignes avec 9 colonnes
         for (let i = 0; i <= 113; i++) {
             let row = document.createElement('tr'); // Crée une ligne
 
@@ -11,24 +11,15 @@ class grid{
                 let cell = document.createElement('td'); // Crée une cellule
                 let el = new element(cell);
                 el.setCoordinates(i,j);
+                //cell.addEventListener("click", function() {
+                //    selection_cell(cell);
+                //});
                 row.appendChild(cell); // Ajoute la cellule à la ligne
                 this.chain.push(el);
             }
             tableBody.appendChild(row); // Ajoute la ligne au tableau
         }
 
-    }
-
-    deleteGrid(){
-        let i = 0;
-        let el;
-        for(let i = 0; i<1026;i++){
-            el=this.getElementChain(i);
-            if (el.getStatus()===0){
-                break;
-            }
-            el.setValue(0);
-        }
     }
 
     getElementChain(val){

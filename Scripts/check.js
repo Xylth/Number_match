@@ -137,9 +137,6 @@ function wrongInput(){
 
 function gameOver(){
     
-    alert("game over your score is :" + ga.getScore());
-    if (ga.getHighScore()<ga.getScore()){
-        ga.setHighScore(ga.getScore());
-    }
-    init_new_game();
+    alert("game over");
+    init_global();
 }
