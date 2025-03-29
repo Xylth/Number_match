@@ -4,7 +4,7 @@ let gr;
 window.onload = function() {
 
     if (localStorage.getItem("highscore") === null) {
-        localStorage.setItem("highscore", "0");
+        localStorage.setItem("highscore", 0);
     }
 
    init_global();
