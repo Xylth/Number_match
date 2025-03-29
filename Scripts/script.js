@@ -4,6 +4,30 @@ let phase;
 
 
 window.onload = function() {
+    window.addEventListener("orientationchange", function() {
+        ga.saveGame();
+        if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
+            phase=3;
+            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+        }
+        else{
+            phase=4;
+            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+        }
+    });
+    
+    window.addEventListener("resize", function() {
+        if ((window.innerWidth > window.innerHeight)&&(phase===4)) { //landscape
+            ga.saveGame();
+            phase=3;
+            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+    
+        } else  if ((window.innerWidth < window.innerHeight)&&(phase===3)){ //portrait
+            ga.saveGame();
+            phase=4;
+            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+        }
+    });
     
     launch_game();
     if (phase <2){
@@ -38,27 +62,4 @@ function reset_global(){
 
 }
 
-window.addEventListener("orientationchange", function() {
-    ga.saveGame();
-    if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
-        phase=3;
-        window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
-    }
-    else{
-        phase=4;
-        window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
-    }
-});
 
-window.addEventListener("resize", function() {
-    if ((window.innerWidth > window.innerHeight)&&(phase===4)) { //landscape
-        ga.saveGame();
-        phase=3;
-        window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
-
-    } else  if ((window.innerWidth < window.innerHeight)&&(phase===3)){ //portrait
-        ga.saveGame();
-        phase=4;
-        window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
-    }
-});
