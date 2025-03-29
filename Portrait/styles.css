@@ -6,6 +6,8 @@ body {
     flex-direction: column;
     height: 100dvh;
     overflow:hidden; /* Empêche le défilement */
+    
+    justify-content: center; /* Centre horizontalement */
 }
 
 #topBand {
@@ -134,6 +136,9 @@ body {
     text-align: center;
     padding: 10px;
     overflow-y: auto; /* Permet au contenu de défiler verticalement */
+    display: flex;
+    justify-content: center; /* Aligne horizontalement le contenu */
+    
     
     
 }
@@ -163,6 +168,7 @@ body {
     border: 2px solid black;
     width: 100%; /* Le tableau prend toute la largeur */
     border-collapse: collapse; /* Supprime les espaces entre les cellules */
+    max-width: 100dvh;
 }
 
 .grid-table tr {
