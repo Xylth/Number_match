@@ -2,15 +2,21 @@ let ga;
 let gr;
 
 window.onload = function() {
-    // Appeler la fonction à l'ouverture de la page
+
+    if (localStorage.getItem("highscore") === null) {
+        localStorage.setItem("highscore", "0");
+    }
+
    init_global();
-   lockToLandscape();
+
+   
 };
 
 function init_global(){
     ga = new game();
     gr= ga.getChain();
     initBtn();
+    ga.setHighScore(localStorage.getItem("highscore"));
 }
 
 function reset_global(){
