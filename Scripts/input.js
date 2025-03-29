@@ -3,7 +3,9 @@ let selectedElement=[];
 function initBtn(){
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
-    document.getElementById("back").addEventListener("click", function() {
+    const backBtn = document.getElementById("back");
+    
+    backBtn.addEventListener("click", function() {
         window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
     });
     
