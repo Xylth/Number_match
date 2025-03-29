@@ -91,9 +91,9 @@ function D1solver(element){
         let buf = gr.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -101,7 +101,7 @@ function D1solver(element){
             }
         }
 
-    } while(bufStatus!=="0");
+    } while(bufStatus!==0);
         
 }
 
@@ -198,21 +198,7 @@ function help(){
     clear_help();
     
     addBtn.setAttribute('status',0);
-    do{
-        buf = gr.getElementCoordinates(row,col);
-        bufStatus=buf.getStatus();
-        if(bufStatus===4){
-            buf.setStatus(1);
-        }
-        col++;
-        if (col>8){
-            col=0;
-            row++;
-            if(row>113){
-                bufStatus=0;
-            }
-        }
-    } while(bufStatus!==0);
+    
     let answer=globalSolver();
     if(answer !== undefined){
         answer[0].setStatus(4);
