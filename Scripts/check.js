@@ -138,5 +138,6 @@ function wrongInput(){
 function gameOver(){
     
     alert("game over");
+    localStorage.setItem("highscore", ga.getScore());
     reset_global();
 }
