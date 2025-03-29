@@ -138,5 +138,5 @@ function wrongInput(){
 function gameOver(){
     
     alert("game over");
-    init_global();
+    reset_global();
 }

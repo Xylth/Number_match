@@ -1,10 +1,11 @@
 class game{
 
     constructor(){
+        this.base_life=0;
         this.initGameData();
         this.chain = new grid();
         this.chain.fillGrid();
-        this.base_life=1;
+        
 
     }
 
