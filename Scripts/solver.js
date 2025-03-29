@@ -9,9 +9,9 @@ function Vsolver(element){
         let buf = gr.getElementCoordinates(i,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -32,9 +32,9 @@ function Hsolver(element){
         let buf = gr.getElementCoordinates(row,i);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2{
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -62,9 +62,9 @@ function Csolver(element){
         let buf = gr.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
-        if(bufStatus==="0"){
+        if(bufStatus===0){
             return;
-        }else if (bufStatus!=="2"){
+        }else if (bufStatus!==2){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
@@ -72,7 +72,7 @@ function Csolver(element){
             }
         }
 
-    } while(bufStatus!=="0");
+    } while(bufStatus!==0);
         
 }
 
