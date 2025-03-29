@@ -1,0 +1,192 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100dvh;
+    justify-content: center; /* Centre horizontalement */
+}
+
+#sideBand {
+    background-color: rgb(255, 255, 255);
+    height: 100dvh; /* Toute la hauteur de l’écran */
+    width: 20dvw; /* 20% de la largeur de l’écran */
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 5dvh;
+    align-items: center; /* Centre horizontalement les enfants */
+    justify-content:space-between; /* Aligne horizontalement le contenu */
+
+
+    position: fixed; /* Fixé sur le côté */
+    left: 0; /* Place le panneau à gauche */
+    top: 0;
+}
+
+.section{
+    
+    
+    height: 15dvh; /* 15% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content:space-evenly; /* Aligne horizontalement le contenu */
+}
+
+
+.imgContain img {
+    width: auto;  /* L'image prendra toute la largeur du div */
+    height: 5dvh; /* L'image gardera ses proportions */
+    
+  }
+
+
+#score {
+    
+    font-size: 5dvh;
+}
+
+
+.headed{
+    display: flex;
+    flex-direction: row;
+}
+
+.subElement{
+    font:normal;
+    font-size: 2dvh;
+    color:gray;
+}
+
+
+.botElement {
+    position: relative; /* Permet de positionner les éléments enfants par rapport à ce div */
+}
+
+.botElement img {
+    width: auto;
+    height: 8dvh; /* L'image gardera ses proportions */
+}
+
+.botTag {
+    position: absolute;  /* Positionnement absolu par rapport à `.botElement` */
+    top: 0;              /* L'élément est collé en haut du conteneur */
+    right: 0;             /* L'élément est collé à gauche du conteneur */
+    background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
+    color: white;        /* Texte en blanc */
+    padding: 1dvh;        /* Un peu de padding autour du texte */
+    border-radius: 50%;  /* Pour rendre le tag circulaire */
+    width: 1dvh;         /* Largeur du tag */
+    height: 1dvh;        /* Hauteur du tag */
+    display: flex;       /* Utilisation de flexbox pour centrer le texte */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;     /* Centrer verticalement */
+    font-size: 2dvh;      /* Taille du texte */
+}
+
+#content {
+    width: 80dvw; /* 80% de la largeur de l’écran */
+    display: flex;
+    justify-content: center; /* Centre le contenu principal */
+    height: 100vh;
+    overflow-y: auto; /* Permet au contenu de défiler verticalement */
+    position: fixed; /* Fixé sur le côté */
+    right: 0; /* Place le panneau à gauche */
+    top: 0;
+    
+}
+
+#help {
+    background-color: rgb(255, 255, 255);
+    
+    border: none;
+    
+}
+
+#addBtn[status="0"] {
+    background-color: rgb(255, 255, 255);
+    
+    border: none;
+    
+}
+
+#addBtn[status="1"] {
+    background-color: gray; /* Couleur pour visualisation */
+    border: none;
+    
+}
+
+
+.grid-table {
+    border: 2px solid black;
+    width: 100%; /* Le tableau prend toute la largeur */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+}
+
+.grid-table tr {
+    display: flex; /* Transforme les lignes en conteneurs flexibles */
+}
+
+
+.grid-table td {
+    flex: 1; /* Chaque cellule occupe une part égale de la largeur */
+    aspect-ratio: 1 / 1; /* Hauteur égale à la largeur pour chaque cellule */
+    font-weight: bold;
+    
+    border: 1px solid gray;
+    display: flex; /* Permet d'aligner le contenu correctement */
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content: center; /* Aligne horizontalement le contenu */
+    font-size: 4vw;
+}
+
+td[status="0"]{/* vide */
+    background-color: white; /* Couleur pour visualisation */
+    color: white;
+}
+
+td[status="1"]{/* inactif valide */
+    background-color:white; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="2"]{ /* inactif invalide */
+    background-color:white; /* Couleur pour visualisation */
+    color: rgb(161, 159, 159);
+    font-size: 3vw;
+}
+
+td[status="3"]{ /* selection */
+    background-color: lightblue; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="4"]{ /* indice */
+    background-color: gray; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+}
+
+td[status="5"]{ /* fail */
+    background-color: white; /* Couleur pour visualisation */
+    color: black;
+    font-size: 4vw;
+    /*display: inline-block;  /* Nécessaire pour appliquer transform */
+    animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
+}
+
+/* Définition de l'animation */
+@keyframes blinker {
+    0%, 100% {
+        background-color: white; /* Rétablit la couleur de fond initiale */
+    }
+    50% {
+        background-color: red; /* Change la couleur de fond en rouge */
+    }
+}

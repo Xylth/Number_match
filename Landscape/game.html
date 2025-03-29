@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <title>Number match</title>
+        <link rel="stylesheet" href="styles.css">
+        
+        <script src="../Scripts/element.js" defer></script>
+        <script src="../Scripts/game.js" defer></script>
+        <script src="../Scripts/script.js" defer></script>
+        <script src="../Scripts/solver.js" defer></script>
+        <script src="../Scripts/grid.js" defer></script>
+        <script src="../Scripts/input.js" defer></script>
+        <script src="../Scripts/check.js" defer></script>
+    </head>
+    <body>
+        <div id="sideBand">
+            <div class="section">
+                <div id = "back" class =" imgContain">
+                    <img src="../Ressources/back.png" alt="back button" />
+                </div>
+                <div id ="opt" class =" imgContain">
+                    <img src="../Ressources/opt.png" alt="option button" />
+                </div>
+            </div>
+            <div id ="score" class="section"></div>
+            
+            <div id = "stepSection" class ="section headed">
+                <div class ="subElement">Step</div>
+                <div id="step" class ="subElement"></div>
+            </div>
+            <div id ="highSection" class ="section headed">
+                <div class ="subElement">High score</div>
+                <div id="highScore"  class ="subElement"></div>
+            </div>
+
+            <div class="section">
+                <div id = "add" class ="botElement ">
+                    <button id ="addBtn" status="0">
+                        <img src="../Ressources/add.png" alt="add button" />
+                    </button>
+                    <div id ="life" class ="botTag"></div>
+                </div>
+                <div id ="help" class="botElement ">
+                    <button id="help">
+                        <img src="../Ressources/help.png" alt="help button" />
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <table class="grid-table">
+              <tbody>
+
+              </tbody>
+            </table>
+        </div>
+    </body>
+</html>
