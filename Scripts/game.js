@@ -144,5 +144,34 @@ class game{
     getChain(){
         return this.chain;
     }
+
+    saveGame(){
+        localStorage.setItem("score", this.getScore());
+        localStorage.setItem("chain", this.getChain());
+        localStorage.setItem("life", this.getLife());
+        localStorage.setItem("step", this.getStep());
+    }
+
+    restoreGame(){
+        if ((localStorage.getItem("score") === null)||(localStorage.getItem("chain") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
+            reset_global();
+        }
+        else {
+            this.setLife(localStorage.getItem("life"));
+            this.setScore(localStorage.getItem("score"));
+            this.setStep(localStorage.getItem("step"));
+            this.chain.clear_grid();
+            buf = localStorage.getItem("chain");
+            let i =0 ;
+            do {
+                let el = this.chain.getElementChain(i);
+                el.setValue(buf[i].getValue());
+                el.setStatus(buf[i].getStatus());
+                
+                i++;
+            }   while (buf[i].getValue()!==0);        
+        }
+    }
 }
+
 

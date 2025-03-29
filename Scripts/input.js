@@ -6,6 +6,7 @@ function initBtn(){
     const backBtn = document.getElementById("back");
     
     backBtn.addEventListener("click", function() {
+        ga.saveGame();
         window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
     });
     
