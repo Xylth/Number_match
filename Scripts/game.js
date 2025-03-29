@@ -1,7 +1,7 @@
 class game{
 
     constructor(){
-        this.base_life=0;
+        this.base_life=5;
         this.initGameData();
         this.chain = new grid();
         this.chain.fillGrid();
@@ -12,6 +12,15 @@ class game{
     initGameData(){
         this.resetScore();
         this.resetHighScore();
+        this.resetStep();
+        this.resetLife();
+    }
+
+    resetGameData(){
+        if(this.getHighScore()<this.getScore()){
+            this.setHighScore(this.getScore());
+        } 
+        this.resetScore();
         this.resetStep();
         this.resetLife();
     }

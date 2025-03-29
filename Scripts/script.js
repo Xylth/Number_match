@@ -13,7 +13,7 @@ function init_global(){
 }
 
 function reset_global(){
-    ga.initGameData();
+    ga.resetGameData();
     gr.clear_grid();
     gr.fillGrid();
 
