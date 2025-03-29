@@ -19,19 +19,3 @@ function reset_global(){
     gr.fillGrid();
 
 }
-
-function lockToLandscape() {
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch((err) => {
-                    console.log("Échec du verrouillage d'orientation :", err);
-                });
-            }
-        }).catch((err) => {
-            console.log("Impossible d'activer le mode plein écran :", err);
-        });
-    } else {
-        console.log("Le mode plein écran n'est pas supporté.");
-    }
-}

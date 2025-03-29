@@ -218,7 +218,7 @@ function help(){
         answer[0].setStatus(4);
         
         answer[1].setStatus(4);
-        ga.addScore(-10);
+        ga.addScore(-10*ga.getStep());
 
     }else{
         addBtn.setAttribute('status',1);
