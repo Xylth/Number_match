@@ -11,10 +11,10 @@ window.onload = function() {
     ngame.addEventListener("click", function() {
         
         if (window.innerWidth > window.innerHeight) { //landscape
-            phase=0;
+            localStorage.setItem("state", 0);
             window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html"; // Remplace par ton URL
         } else { //portrait
-            phase=1;
+            localStorage.setItem("state", 1);
             window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html"; // Remplace par ton URL
         }
         
