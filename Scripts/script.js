@@ -8,25 +8,25 @@ window.onload = function() {
     window.addEventListener("orientationchange", function() {
         ga.saveGame();
         if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
-            phase=3;
+            phase=2;
             localStorage.setItem("state", phase);
             window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
         }
         else{
-            phase=4;
+            phase=3;
             localStorage.setItem("state", phase);
             window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
         }
     });
     
     window.addEventListener("resize", function() {
-        if ((window.innerWidth > window.innerHeight)&&(phase===4)) { //landscape
+        if ((window.innerWidth > window.innerHeight)&&(phase===3)) { //landscape
             ga.saveGame();
             phase=3;
             localStorage.setItem("state", phase);
             window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
     
-        } else  if ((window.innerWidth < window.innerHeight)&&(phase===3)){ //portrait
+        } else  if ((window.innerWidth < window.innerHeight)&&(phase===2)){ //portrait
             ga.saveGame();
             phase=4;
             localStorage.setItem("state", phase);
