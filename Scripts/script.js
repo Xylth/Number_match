@@ -11,3 +11,10 @@ function init_global(){
     gr= ga.getChain();
     initBtn();
 }
+
+function reset_global(){
+    ga.initGameData();
+    gr.clear_grid();
+    gr.fillGrid();
+
+}

@@ -4,6 +4,7 @@ class game{
         this.initGameData();
         this.chain = new grid();
         this.chain.fillGrid();
+        this.base_life=1;
 
     }
 
@@ -106,8 +107,8 @@ class game{
         if (val<0){
             this.life=0;
         }
-        else if (val>5){
-            this.life=5;
+        else if (val>this.base_life){
+            this.life=this.base_life;
         }
         else{
             this.life=val;
@@ -125,7 +126,7 @@ class game{
     }
 
     resetLife(){
-        this.life=5;
+        this.life=this.base_life;
         document.querySelector('#life').innerHTML=this.life;
         return this.life;
     }

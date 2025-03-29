@@ -22,6 +22,18 @@ class grid{
 
     }
 
+    clear_grid(){
+        for(let i = 0;i<1026;i++){
+            let buf = this.chain[i];
+            if(buf.getStatus()!==0){
+                buf.setValue=0;
+            }
+            else{
+                return;
+            }
+        }
+    }
+
     getElementChain(val){
         if((val>-1)&&(val<1026)){
             return this.chain[val];
