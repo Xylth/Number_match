@@ -34,7 +34,7 @@ function Hsolver(element){
         bufStatus=buf.getStatus();
         if(bufStatus===0){
             return;
-        }else if (bufStatus!==2{
+        }else if (bufStatus!==2){
             if ((bufValue===value) ||(value+bufValue===10)){
                 return buf;
             }else{
