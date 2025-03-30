@@ -20,18 +20,7 @@ window.onload = function() {
     });
     
     window.addEventListener("resize", function() {
-        if ((window.innerWidth > window.innerHeight)&&(phase===3)) { //landscape
-            ga.saveGame();
-            phase=2;
-            localStorage.setItem("state", phase);
-            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
-    
-        } else  if ((window.innerWidth < window.innerHeight)&&(phase===2)){ //portrait
-            ga.saveGame();
-            phase=3;
-            localStorage.setItem("state", phase);
-            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
-        }
+       resized();
     });
 
     launch_game();
@@ -66,6 +55,21 @@ function reset_global(){
     gr.clear_grid();
     gr.fillGrid();
 
+}
+
+function resized(){
+    if ((window.innerWidth > window.innerHeight)&&(phase===3)) { //landscape
+        ga.saveGame();
+        phase=2;
+        localStorage.setItem("state", phase);
+        window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+
+    } else  if ((window.innerWidth < window.innerHeight)&&(phase===2)){ //portrait
+        ga.saveGame();
+        phase=3;
+        localStorage.setItem("state", phase);
+        window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+    }
 }
 
 
