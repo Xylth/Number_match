@@ -16,12 +16,12 @@ class game{
     }
 
     resetGameData(){
-        if(this.getHighScore()<this.getScore()){
-            this.setHighScore(this.getScore());
-        } 
-        this.resetScore();
-        this.resetStep();
-        this.resetLife();
+        localStorage.removeItem("life");
+        
+        localStorage.removeItem("step");
+        
+        localStorage.removeItem("score");
+
     }
 
     nextStep(){

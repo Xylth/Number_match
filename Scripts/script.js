@@ -68,7 +68,6 @@ function init_global(){
 function reset_global(){
     ga.resetGameData();
     gr.clear_grid();
-    gr.fillGrid();
 
 }
 

@@ -137,7 +137,10 @@ function wrongInput(){
 
 function gameOver(){
     
-    alert("game over");
-    localStorage.setItem("highscore", ga.getScore());
+    alert("la partie est fini\n votre score est de : "+ga.getScore);
+    if (ga.getScore()>ga.getHighScore()){
+        localStorage.setItem("highscore", ga.getScore());
+    }
     reset_global();
+    window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
 }
