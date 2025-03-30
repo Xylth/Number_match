@@ -1,11 +1,11 @@
 function init_custom(){
     let storedColor;
     if (localStorage.getItem("backclr") === null) {
-        localStorage.setItem("backclr", "255, 255, 255");
+        localStorage.setItem("backclr", "255, 255, 000");
     }
     storedColor = localStorage.getItem("backclr");
     document.documentElement.style.setProperty("--bck-color", `rgb(${storedColor})`);
-    
+
     if (localStorage.getItem("borderclr") === null) {
         localStorage.setItem("borderclr", "000, 000, 000");
     }
