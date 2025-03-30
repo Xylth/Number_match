@@ -24,11 +24,11 @@ window.onload = function() {
     });
 
     launch_game();
-    if (phase ==="0"){
+    if (phase ===0){
         phase=2;
         localStorage.setItem("state", phase);
     }
-    else if (phase==="1"){
+    else if (phase===1){
         phase=3;
         localStorage.setItem("state", phase);
     }
@@ -62,13 +62,13 @@ function reset_global(){
 }
 
 function resized(){
-    if ((window.innerWidth > window.innerHeight)&&(phase==="3")) { //landscape
+    if ((window.innerWidth > window.innerHeight)&&(phase===3)) { //landscape
         ga.saveGame();
         phase=2;
         localStorage.setItem("state", phase);
         window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
 
-    } else  if ((window.innerWidth < window.innerHeight)&&(phase==="2")){ //portrait
+    } else  if ((window.innerWidth < window.innerHeight)&&(phase===2)){ //portrait
         ga.saveGame();
         phase=3;
         localStorage.setItem("state", phase);
