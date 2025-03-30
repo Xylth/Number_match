@@ -10,7 +10,6 @@ function initBtn(){
         window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
     });
     
-
     addBtn.addEventListener("click", function() {
         addBtn.setAttribute('status',0);
         if (ga.getLife()>0){ 
