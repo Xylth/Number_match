@@ -1,6 +1,10 @@
 /* styles.css */
 :root {
     --bck-color: rgb(255, 255, 255);
+    --border-color : rgb(0,0,0);
+    --valnmb-color : rgb(0,0,0);
+    --deadnmb-color : rgb(164,164,164);
+    --clue-color : rgb(50, 186, 68);
 }
 
 
@@ -123,14 +127,14 @@ body {
 }
 
 #addBtn[status="1"] {
-    background-color: gray; /* Couleur pour visualisation */
+    background-color:var(--clue-color); /* Couleur pour visualisation */
     border: none;
     
 }
 
 
 .grid-table {
-    border: 2px solid black;
+    border: 2px solid var(--border-color);;
     width: 100%; /* Le tableau prend toute la largeur */
     border-collapse: collapse; /* Supprime les espaces entre les cellules */
 }
@@ -153,37 +157,37 @@ body {
 }
 
 td[status="0"]{/* vide */
-    background-color: white; /* Couleur pour visualisation */
-    color: white;
+    background-color: var(--bck-color); /* Couleur pour visualisation */
+    color: var(--bck-color);
 }
 
 td[status="1"]{/* inactif valide */
-    background-color:white; /* Couleur pour visualisation */
-    color: black;
+    background-color:var(--bck-color); /* Couleur pour visualisation */
+    color: var(--valnmb-color);
     font-size: 4vw;
 }
 
 td[status="2"]{ /* inactif invalide */
-    background-color:white; /* Couleur pour visualisation */
-    color: rgb(161, 159, 159);
+    background-color:var(--bck-color); /* Couleur pour visualisation */
+    color: var(--deadnmb-color);
     font-size: 3vw;
 }
 
 td[status="3"]{ /* selection */
     background-color: lightblue; /* Couleur pour visualisation */
-    color: black;
+    color: var(--valnmb-color);
     font-size: 4vw;
 }
 
 td[status="4"]{ /* indice */
-    background-color: gray; /* Couleur pour visualisation */
-    color: black;
+    background-color: var(--clue-color); /* Couleur pour visualisation */
+    color: var(--valnmb-color);
     font-size: 4vw;
 }
 
 td[status="5"]{ /* fail */
-    background-color: white; /* Couleur pour visualisation */
-    color: black;
+    background-color: var(--bck-color); /* Couleur pour visualisation */
+    color: var(--valnmb-color);
     font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
     animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
@@ -192,7 +196,7 @@ td[status="5"]{ /* fail */
 /* Définition de l'animation */
 @keyframes blinker {
     0%, 100% {
-        background-color: white; /* Rétablit la couleur de fond initiale */
+        background-color: var(--bck-color); /* Rétablit la couleur de fond initiale */
     }
     50% {
         background-color: red; /* Change la couleur de fond en rouge */

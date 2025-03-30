@@ -35,5 +35,5 @@ function init_custom(){
     
     storedColor = localStorage.getItem("clueclr");
     document.documentElement.style.setProperty("--clue-color",storedColor);
-
+    //    <input type="color" id="colorPicker"></input>
 }
