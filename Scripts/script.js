@@ -1,36 +1,46 @@
 let ga;
 let gr;
-let phase;
+let layout;
+
 
 
 window.onload = function() {
-    phase= localStorage.getItem("state");
+    layout= localStorage.getItem("layout");
     window.addEventListener("orientationchange", function() {
         ga.saveGame();
+        localStorage.setItem("game", "o");
         if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
-            phase=2;
-            localStorage.setItem("state", phase);
+            layout="l";
+            localStorage.setItem("layout", layout);
             window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
         }
         else{
-            phase=3;
-            localStorage.setItem("state", phase);
+            layout="p";
+            localStorage.setItem("layout", layout);
             window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
         }
     });
     
     window.addEventListener("resize", function() {
-       resized();
+        if ((window.innerWidth > window.innerHeight)&&(layout==="p")) { //landscape
+            ga.saveGame();
+            localStorage.setItem("game", "o");
+            layout="l";
+            localStorage.setItem("layout", layout);
+            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+    
+        } else  if ((window.innerWidth < window.innerHeight)&&(layout==="l")){ //portrait
+            ga.saveGame();
+            localStorage.setItem("game", "o");
+            layout="p";
+            localStorage.setItem("layout", layout);
+            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+        }
     });
 
     launch_game();
-    if (phase ===0){
-        phase=2;
-        localStorage.setItem("state", phase);
-    }
-    else if (phase===1){
-        phase=3;
-        localStorage.setItem("state", phase);
+    if (localStorage.getItem("game") ==="n"){
+        localStorage.setItem("game", "o");
     }
     else{
         ga.restoreGame()
@@ -62,18 +72,7 @@ function reset_global(){
 }
 
 function resized(){
-    if ((window.innerWidth > window.innerHeight)&&(phase===3)) { //landscape
-        ga.saveGame();
-        phase=2;
-        localStorage.setItem("state", phase);
-        window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
-
-    } else  if ((window.innerWidth < window.innerHeight)&&(phase===2)){ //portrait
-        ga.saveGame();
-        phase=3;
-        localStorage.setItem("state", phase);
-        window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
-    }
+   
 }
 
 
