@@ -25,7 +25,7 @@ window.onload = function() {
 
     launch_game();
     if (phase <2){
-        phase+=2;
+        phase=phase+2;
         localStorage.setItem("state", phase);
     }
     else{
