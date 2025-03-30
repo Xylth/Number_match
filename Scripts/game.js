@@ -165,8 +165,9 @@ class game{
             let buf_val = localStorage.getItem("grid_val");
             let buf_sta = localStorage.getItem("grid_sta");
             for (let i =0;i<buf_val.length;i++){
-                this.chain[i].setValue(buf_val[i]);
-                this.chain[i].setStatus(buf_sta[i]);
+                let buf = this.chain.getElementChain(i);
+                buf.setValue(buf_val[i]);
+                buf.setStatus(buf_sta[i]);
 
             }        
         }
