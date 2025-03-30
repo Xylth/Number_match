@@ -137,7 +137,7 @@ function wrongInput(){
 
 function gameOver(){
     
-    alert("la partie est fini\n votre score est de : "+ga.getScore);
+    alert("la partie est fini\n votre score est de : "+ ga.getScore() );
     if (ga.getScore()>ga.getHighScore()){
         localStorage.setItem("highscore", ga.getScore());
     }
