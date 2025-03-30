@@ -20,4 +20,17 @@ window.onload = function() {
         }
         
     });
+
+    last.addEventListener("click", function() {
+        
+        localStorage.setItem("game", "o");
+        if (window.innerWidth > window.innerHeight) { //landscape
+            localStorage.setItem("layout", "l");
+            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html"; // Remplace par ton URL
+        } else { //portrait
+            localStorage.setItem("layout", "p");
+            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html"; // Remplace par ton URL
+        }
+        
+    });
 };
