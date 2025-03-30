@@ -24,8 +24,12 @@ window.onload = function() {
     });
 
     launch_game();
-    if (phase <2){
-        phase=phase+2;
+    if (phase ===0){
+        phase=2;
+        localStorage.setItem("state", phase);
+    }
+    else if (phase===1){
+        phase=3;
         localStorage.setItem("state", phase);
     }
     else{
