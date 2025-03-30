@@ -1,8 +1,10 @@
 function init_custom(){
     let storedColor;
     if (localStorage.getItem("backclr") === null) {
-        localStorage.setItem("backclr", "rgb(255, 255, 255)");
+        localStorage.setItem("backclr", "rgb(255, 255, 000)");
     }
+    
+    localStorage.setItem("backclr", "rgb(255, 255, 000)");
     storedColor = localStorage.getItem("backclr");
     document.documentElement.style.setProperty("--bck-color",storedColor);
 
