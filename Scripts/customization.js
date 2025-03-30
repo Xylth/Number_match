@@ -4,7 +4,6 @@ function init_custom(){
         localStorage.setItem("backclr", "rgb(255, 255, 255)");
     }
     
-    localStorage.setItem("backclr", "rgb(255, 255, 255)");
     storedColor = localStorage.getItem("backclr");
     document.documentElement.style.setProperty("--bck-color",storedColor);
 
