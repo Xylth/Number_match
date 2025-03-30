@@ -39,13 +39,13 @@ window.onload = function() {
     });
 
     launch_game();
-    init_custom();
     if (localStorage.getItem("game") ==="n"){
         localStorage.setItem("game", "o");
     }
     else{
         ga.restoreGame()
     }
+    init_custom();
 };
 
 function launch_game() {
