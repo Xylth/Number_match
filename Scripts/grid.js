@@ -130,4 +130,24 @@ class grid{
             buf.setStatus(bufNext.getStatus());
         }
     }   
+
+    export_value(){
+        let str="";
+        let i=0;
+        while (this.chain[i].getValue()!==0){
+            str+=this.chain[i].getValue();
+            i++;
+        }
+        localStorage.setItem("grid_val", str);
+    }
+    
+    export_status(){
+        let str="";
+        let i=0;
+        while (this.chain[i].getStatus()!==0){
+            str+=this.chain[i].getStatus();
+            i++;
+        }
+        localStorage.setItem("grid_sta", str);
+    }
 }

@@ -3,7 +3,7 @@ window.onload = function() {
     
     const ngame = document.getElementById("ng");
     
-    if ((localStorage.getItem("score") === null)||(localStorage.getItem("chain") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
+    if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)){
         last.style.display = "none"; 
     }
 

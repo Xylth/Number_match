@@ -147,13 +147,14 @@ class game{
 
     saveGame(){
         localStorage.setItem("score", this.getScore());
-        localStorage.setItem("chain", this.getChain());
         localStorage.setItem("life", this.getLife());
         localStorage.setItem("step", this.getStep());
+        this.chain.export_status();
+        this.chain.export_value();
     }
 
     restoreGame(){
-        if ((localStorage.getItem("score") === null)||(localStorage.getItem("chain") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
+        if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
             reset_global();
         }
         else {
@@ -161,15 +162,13 @@ class game{
             this.setScore(localStorage.getItem("score"));
             this.setStep(localStorage.getItem("step"));
             this.chain.clear_grid();
-            buf = localStorage.getItem("chain");
-            let i =0 ;
-            do {
-                let el = this.chain.getElementChain(i);
-                el.setValue(buf[i].getValue());
-                el.setStatus(buf[i].getStatus());
-                
-                i++;
-            }   while (buf[i].getValue()!==0);        
+            let buf_val = localStorage.getItem("grid_val");
+            let buf_sta = localStorage.getItem("grid_sta");
+            for (let i =0;i<buf_val.length();i++){
+                this.chain[i].setValue(buf_val[i]);
+                this.chain[i].setStatus(buf_sta[i]);
+
+            }        
         }
     }
 }
