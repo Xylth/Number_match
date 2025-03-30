@@ -5,7 +5,6 @@ class game{
         this.initGameData();
         this.chain = new grid();
         this.chain.fillGrid();
-        
 
     }
 
