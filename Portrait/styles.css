@@ -1,4 +1,10 @@
 /* styles.css */
+
+:root {
+    --bck-color: rgb(255, 255, 255);
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -8,10 +14,11 @@ body {
     overflow:hidden; /* Empêche le défilement */
     
     justify-content: center; /* Centre horizontalement */
+    background-color: var(----bck-color);
 }
 
 #topBand {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     height: 20dvh; /* 20% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
     display: grid;
@@ -20,7 +27,7 @@ body {
 }
 
 #topTrans{
-    background:linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    background:linear-gradient(to bottom, var(----bck-color), rgba(255, 255, 255, 0));
     position: absolute;
     top: 20dvh; /* Distance du haut du conteneur */
     left: 0px; /* Distance de la gauche du conteneur */
@@ -85,7 +92,7 @@ body {
 }
 
 #botBand {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     height: 15dvh; /* 15% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
     display: flex; /* Flexbox pour aligner le contenu */
@@ -109,7 +116,7 @@ body {
     top: 0;              /* L'élément est collé en haut du conteneur */
     right: 0;             /* L'élément est collé à gauche du conteneur */
     background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
-    color: white;        /* Texte en blanc */
+    color: var(----bck-color);        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
     width: 1dvh;         /* Largeur du tag */
@@ -121,7 +128,7 @@ body {
 }
 
 #botTrans{
-    background:linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    background:linear-gradient(to top, var(----bck-color), rgba(255, 255, 255, 0));
     position: absolute;
     bottom: 15dvh; /* Distance du haut du conteneur */
     left: 0px; /* Distance de la gauche du conteneur */
@@ -131,7 +138,7 @@ body {
 }
 
 #content {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     flex: 1;
     text-align: center;
     padding: 10px;
@@ -144,14 +151,14 @@ body {
 }
 
 #help {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     
     border: none;
     
 }
 
 #addBtn[status="0"] {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     
     border: none;
     

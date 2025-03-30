@@ -1,4 +1,10 @@
 /* styles.css */
+:root {
+    --bck-color: rgb(255, 255, 255);
+}
+
+
+
 body {
     margin: 0;
     padding: 0;
@@ -6,10 +12,12 @@ body {
     flex-direction: row;
     height: 100dvh;
     justify-content: center; /* Centre horizontalement */
+    
+    background-color: var(----bck-color);
 }
 
 #sideBand {
-    background-color: rgb(255, 255, 255);
+    background-color: var(----bck-color);
     height: 100dvh; /* Toute la hauteur de l’écran */
     width: 20dvw; /* 20% de la largeur de l’écran */
 
@@ -77,7 +85,7 @@ body {
     top: 0;              /* L'élément est collé en haut du conteneur */
     right: 0;             /* L'élément est collé à gauche du conteneur */
     background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
-    color: white;        /* Texte en blanc */
+    color: var(----bck-color);;        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
     width: 1dvh;         /* Largeur du tag */
@@ -101,14 +109,14 @@ body {
 }
 
 #help {
-    background-color: rgb(255, 255, 255);
+    background-color:  var(----bck-color);
     
     border: none;
     
 }
 
 #addBtn[status="0"] {
-    background-color: rgb(255, 255, 255);
+    background-color:  var(----bck-color);
     
     border: none;
     
