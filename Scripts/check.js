@@ -89,6 +89,7 @@ function check_input(){
             check_line(Math.max(a.getRow(),b.getRow()));
             check_line(Math.min(a.getRow(),b.getRow()));
             selectedElement=[];
+            ga.saveGame();
             if(ga.getLife()===0){
                 let result=globalSolver();
                 if(result===undefined){
