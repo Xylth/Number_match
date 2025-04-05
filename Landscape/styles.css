@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    font-size: 5dvh;
+    font-size: 15dvh;
     align-items: center; /* Centre horizontalement les enfants */
     justify-content:space-between; /* Aligne horizontalement le contenu */
 
@@ -59,7 +59,7 @@ body {
 
 #score {
     
-    font-size: 5dvh;
+    font-size: 15dvh;
 }
 
 
@@ -70,7 +70,7 @@ body {
 
 .subElement{
     font:normal;
-    font-size: 2dvh;
+    font-size: 12dvh;
     color:gray;
 }
 
@@ -81,7 +81,7 @@ body {
 
 .botElement img {
     width: auto;
-    height: 8dvh; /* L'image gardera ses proportions */
+    height: 18dvh; /* L'image gardera ses proportions */
 }
 
 .botTag {
@@ -92,12 +92,12 @@ body {
     color: var(--bck-color);;        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 1dvh;         /* Largeur du tag */
-    height: 1dvh;        /* Hauteur du tag */
+    width: 11dvh;         /* Largeur du tag */
+    height: 11dvh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
-    font-size: 2dvh;      /* Taille du texte */
+    font-size: 12dvh;      /* Taille du texte */
 }
 
 #content {
