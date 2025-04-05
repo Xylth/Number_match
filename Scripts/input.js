@@ -49,8 +49,8 @@ function initBtn(){
         const bck = document.getElementsByName("bck").values; // récupère le 1er élément avec name="bck"
         const brd = document.getElementsByName("brd").values; // récupère le 1er élément avec name="brd"
         const val = document.getElementsByName("valNum").values; // récupère le 1er élément avec name="valNum"
-        const dead = document.getElementsByName("brd").values; // récupère le 1er élément avec name="deadNum"
-        const clu = document.getElementsByName("brd").values; // récupère le 1er élément avec name="clu"
+        const dead = document.getElementsByName("deadNum").values; // récupère le 1er élément avec name="deadNum"
+        const clu = document.getElementsByName("clu").values; // récupère le 1er élément avec name="clu"
         localStorage.setItem("backclr", hexToRgb(bck));
         localStorage.setItem("borderclr", hexToRgb(brd));
         localStorage.setItem("validnumberclr",hexToRgb(val));

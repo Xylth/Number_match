@@ -39,6 +39,7 @@ body {
 
 .menu_line {
     height: 10%; /* 10% de la hauteur du menu */
+    width:  100%; /* 100% de la largeur du menu */
     display: flex;
     align-items: center; /* vertical alignment */
     justify-content: space-between; /* spacing entre éléments */
