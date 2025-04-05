@@ -5,7 +5,7 @@ function initBtn(){
     const helpBtn = document.getElementById("help");
     const backBtn = document.getElementById("back");
     const optBtn = document.getElementById("opt"););
-    const resetBtn = document.getElementById("restore"););
+    const resetBtn = document.getElementById("restore");
     const aplBtn = document.getElementById("apply");
     
     backBtn.addEventListener("click", function() {
