@@ -92,8 +92,8 @@ body {
     color: var(--bck-color);;        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 5dvh;         /* Largeur du tag */
-    height: 5dvh;        /* Hauteur du tag */
+    width: 3dvh;         /* Largeur du tag */
+    height: 3dvh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
