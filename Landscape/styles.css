@@ -20,6 +20,41 @@ body {
     background-color: var(--bck-color);
 }
 
+
+#menu {
+    display: none; /* Invisible par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage */
+    background-color: white;
+    border: 1px solid #000000;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+.menu_line {
+    height: 10%; /* 10% de la hauteur du menu */
+    width:  100%; /* 100% de la largeur du menu */
+    display: flex;
+    align-items: center; /* vertical alignment */
+    justify-content: space-between; /* spacing entre éléments */
+}
+
+.menu_line p {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
+  }
+
+.menu_line input {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
+}
+
 #sideBand {
     background-color: var(--bck-color);
     height: 100dvh; /* Toute la hauteur de l’écran */
