@@ -70,7 +70,7 @@ body {
 
 .subElement{
     font:normal;
-    font-size: 7dvh;
+    font-size: 5dvh;
     color:gray;
 }
 
@@ -92,12 +92,12 @@ body {
     color: var(--bck-color);;        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 8dvh;         /* Largeur du tag */
-    height: 8dvh;        /* Hauteur du tag */
+    width: 5dvh;         /* Largeur du tag */
+    height: 5dvh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
-    font-size: 7dvh;      /* Taille du texte */
+    font-size: 3dvh;      /* Taille du texte */
 }
 
 #content {
