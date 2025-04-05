@@ -7,8 +7,8 @@ window.onload = function() {
 
     const lvl = document.getElementById("level");
 
-    diff =2;
-    
+    diff =3;
+
     
     if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)){
         last.style.display = "none"; 
