@@ -6,6 +6,9 @@ window.onload = function() {
     const ngame = document.getElementById("ng");
 
     const lvl = document.getElementById("level");
+
+    diff =2;
+    
     
     if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)){
         last.style.display = "none"; 
