@@ -52,14 +52,14 @@ body {
 
 .imgContain img {
     width: auto;  /* L'image prendra toute la largeur du div */
-    height: 5dvh; /* L'image gardera ses proportions */
+    height: 9dvh; /* L'image gardera ses proportions */
     
   }
 
 
 #score {
     
-    font-size: 15dvh;
+    font-size: 12dvh;
 }
 
 
@@ -70,7 +70,7 @@ body {
 
 .subElement{
     font:normal;
-    font-size: 12dvh;
+    font-size: 9dvh;
     color:gray;
 }
 
@@ -81,7 +81,7 @@ body {
 
 .botElement img {
     width: auto;
-    height: 18dvh; /* L'image gardera ses proportions */
+    height: 15dvh; /* L'image gardera ses proportions */
 }
 
 .botTag {
@@ -92,12 +92,12 @@ body {
     color: var(--bck-color);;        /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */
-    width: 11dvh;         /* Largeur du tag */
-    height: 11dvh;        /* Hauteur du tag */
+    width: 8dvh;         /* Largeur du tag */
+    height: 8dvh;        /* Hauteur du tag */
     display: flex;       /* Utilisation de flexbox pour centrer le texte */
     justify-content: center; /* Centrer horizontalement */
     align-items: center;     /* Centrer verticalement */
-    font-size: 12dvh;      /* Taille du texte */
+    font-size: 7dvh;      /* Taille du texte */
 }
 
 #content {
