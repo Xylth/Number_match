@@ -4,7 +4,9 @@ function initBtn(){
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
     const backBtn = document.getElementById("back");
-    const optBtn = document.getElementById("opt");
+    const optBtn = document.getElementById("opt"););
+    const resetBtn = document.getElementById("restore"););
+    const aplBtn = document.getElementById("apply");
     
     backBtn.addEventListener("click", function() {
         ga.saveGame();
@@ -27,6 +29,28 @@ function initBtn(){
     helpBtn.addEventListener("click", function() {
     
         help();
+    });
+
+    
+    resetBtn.addEventListener("click", function() {
+        
+        localStorage.setItem("backclr", "rgb(255, 255, 255)");
+        localStorage.setItem("borderclr", "rgb(0, 0, 0)");
+        localStorage.setItem("validnumberclr", "rgb(0, 0, 0)");
+        localStorage.setItem("deadnmbclr", "rgb(164, 164, 164)");
+        localStorage.setItem("clueclr", "rgb(50, 186, 68)");
+        init_custom();
+    });
+
+    
+    aplBtn.addEventListener("click", function() {
+        
+        localStorage.setItem("backclr", "rgb(255, 255, 255)");
+        localStorage.setItem("borderclr", "rgb(0, 0, 0)");
+        localStorage.setItem("validnumberclr", "rgb(0, 0, 0)");
+        localStorage.setItem("deadnmbclr", "rgb(164, 164, 164)");
+        localStorage.setItem("clueclr", "rgb(50, 186, 68)");
+        init_custom();
     });
 }
 
