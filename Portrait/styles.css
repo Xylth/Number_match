@@ -34,6 +34,13 @@ body {
     border-radius: 10px;
   }
 
+.menu_line {
+    height: 10%; /* 10% de la hauteur du menu */
+    display: flex;
+    align-items: center; /* vertical alignment */
+    justify-content: space-around; /* spacing entre éléments */
+}
+
 #topBand {
     background-color: var(--bck-color);
     height: 20dvh; /* 20% de la hauteur de l'écran */
