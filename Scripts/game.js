@@ -2,6 +2,7 @@ class game{
 
     constructor(){
         this.base_life=5;
+        this.level=3;
         this.initGameData();
         this.chain = new grid();
         this.chain.fillGrid();
@@ -21,6 +22,8 @@ class game{
         localStorage.removeItem("step");
         
         localStorage.removeItem("score");
+
+        localStorage.removeItem("level");
 
     }
 
@@ -44,6 +47,10 @@ class game{
 
     getLife(){
         return this.life;
+    }
+
+    getLevel(){
+        return this.level;
     }
 
     setScore(val){
@@ -100,6 +107,16 @@ class game{
         return this.step;
     }
 
+    setLevel(val){
+        if (val<1){
+            this.level=1;
+        }
+        else{
+            this.level=val;
+        }
+        return this.level;
+    }
+
     addStep(){
         this.step++;
         document.querySelector('#step').innerHTML=this.step;
@@ -148,6 +165,7 @@ class game{
         localStorage.setItem("score", this.getScore());
         localStorage.setItem("life", this.getLife());
         localStorage.setItem("step", this.getStep());
+        localStorage.setItem("level",this.getLevel());
         this.chain.export_status();
         this.chain.export_value();
     }
@@ -160,6 +178,7 @@ class game{
             this.setLife(Number(localStorage.getItem("life")));
             this.setScore(Number(localStorage.getItem("score")));
             this.setStep(Number(localStorage.getItem("step")));
+            this.setLevel(Number(localStorage.getItem("level")));
             this.chain.clear_grid();
             let buf_val =localStorage.getItem("grid_val");
             let buf_sta =localStorage.getItem("grid_sta");

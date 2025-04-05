@@ -57,6 +57,7 @@ class grid{
         let i = 0;
         let j = 0;
         let value=0;
+        lvl = Number(LocalStorage.getItem("level"));
         do{
             let el = this.chain[i];
             value = el.getValue();
@@ -69,9 +70,10 @@ class grid{
         } while((value!==0));
         if(j===0){
             for(let i =0;i<9;i++){
-                this.cnt[i]=3;
+                this.cnt[i]=lvl;
+                j+=lvl;
             }
-            for(let i=0;i<5;i++){
+            for(let i=j;i<32;i++){
                 let randomInt = Math.floor(Math.random() * 9);
                 this.cnt[randomInt]++;
             }
