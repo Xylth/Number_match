@@ -32,13 +32,16 @@ body {
     padding: 20px;
     z-index: 1000;
     border-radius: 10px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
   }
 
 .menu_line {
     height: 10%; /* 10% de la hauteur du menu */
     display: flex;
     align-items: center; /* vertical alignment */
-    justify-content: space-around; /* spacing entre éléments */
+    justify-content: space-between; /* spacing entre éléments */
 }
 
 #topBand {

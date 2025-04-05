@@ -39,6 +39,8 @@ function initBtn(){
         localStorage.setItem("validnumberclr", "rgb(0, 0, 0)");
         localStorage.setItem("deadnmbclr", "rgb(164, 164, 164)");
         localStorage.setItem("clueclr", "rgb(50, 186, 68)");
+        let menuPan= document.getElementById("menu");
+        menuPan.style.display="none"
         init_custom();
     });
 
@@ -50,6 +52,8 @@ function initBtn(){
         localStorage.setItem("validnumberclr", "rgb(0, 0, 0)");
         localStorage.setItem("deadnmbclr", "rgb(164, 164, 164)");
         localStorage.setItem("clueclr", "rgb(50, 186, 68)");
+        let menuPan= document.getElementById("menu");
+        menuPan.style.display="none"
         init_custom();
     });
 }
