@@ -29,7 +29,7 @@ body {
 #sideBand {
     background-color: var(--bck-color);
     height: 100dvh; /* Toute la hauteur de l’écran */
-    width: 20dvw; /* 20% de la largeur de l’écran */
+    width: 33dvw; /* 33% de la largeur de l’écran */
 
     display: flex;
     flex-direction: column;
