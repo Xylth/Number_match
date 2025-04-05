@@ -43,7 +43,16 @@ body {
     display: flex;
     align-items: center; /* vertical alignment */
     justify-content: space-between; /* spacing entre éléments */
-    gap:10px;
+}
+
+.menu_line p {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
+  }
+
+.menu_line input {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
 }
 
 #topBand {

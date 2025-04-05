@@ -7,6 +7,14 @@ function initBtn(){
     const optBtn = document.getElementById("opt");
     const resetBtn = document.getElementById("restore");
     const aplBtn = document.getElementById("apply");
+
+    const bck= document.getElementById("bck");
+    const brd= document.getElementById("brd");
+    const valNum= document.getElementById("valNum");
+    const deadNum= document.getElementById("deadNum");
+    const clu= document.getElementById("clu");
+    
+
     
     backBtn.addEventListener("click", function() {
         ga.saveGame();
@@ -33,33 +41,44 @@ function initBtn(){
 
     
     resetBtn.addEventListener("click", function() {
-        
-        localStorage.setItem("backclr", "rgb(255, 255, 255)");
-        localStorage.setItem("borderclr", "rgb(0, 0, 0)");
-        localStorage.setItem("validnumberclr", "rgb(0, 0, 0)");
-        localStorage.setItem("deadnmbclr", "rgb(164, 164, 164)");
-        localStorage.setItem("clueclr", "rgb(50, 186, 68)");
+        localStorage.removeItem("backclr");
+        localStorage.removeItem("borderclr");
+        localStorage.removeItem("valNum");
+        localStorage.removeItem("deadNum");
+        localStorage.removeItem("clu");
+
         let menuPan= document.getElementById("menu");
         menuPan.style.display="none"
         init_custom();
     });
 
+    bck.addEventListener('input', function() {
+        localStorage.setItem("backclr", hexToRgb(this.value));
+    });
+
+    brd.addEventListener('input', function() {
+        localStorage.setItem("borderclr", hexToRgb(this.value));
+    });
+
+    valNum.addEventListener('input', function() {
+        localStorage.setItem("valNum", hexToRgb(this.value));
+    });
+
+    deadNum.addEventListener('input', function() {
+        localStorage.setItem("deadNum", hexToRgb(this.value));
+    });
+
+    clu.addEventListener('input', function() {
+        localStorage.setItem("clu", hexToRgb(this.value));
+    });
+
     
     aplBtn.addEventListener("click", function() {
-        const bck = document.getElementById("bck").values; // récupère le 1er élément avec name="bck"
-        const brd = document.getElementById("brd").values; // récupère le 1er élément avec name="brd"
-        const val = document.getElementById("valNum").values; // récupère le 1er élément avec name="valNum"
-        const dead = document.getElementById("deadNum").values; // récupère le 1er élément avec name="deadNum"
-        const clu = document.getElementById("clu").values; // récupère le 1er élément avec name="clu"
-        localStorage.setItem("backclr", hexToRgb(bck));
-        localStorage.setItem("borderclr", hexToRgb(brd));
-        localStorage.setItem("validnumberclr",hexToRgb(val));
-        localStorage.setItem("deadnmbclr", hexToRgb(dead));
-        localStorage.setItem("clueclr",hexToRgb(clu));
         let menuPan= document.getElementById("menu");
         menuPan.style.display="none"
         init_custom();
     });
+
 }
 
 function selection_cell(el){
