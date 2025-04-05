@@ -12,7 +12,7 @@ function initBtn(){
     });
 
     optBtn.addEventListener("click", function() {
-        let menuPan= document.getElementById("menue");
+        let menuPan= document.getElementById("menu");
         menuPan.style.display="block"
     });
 
