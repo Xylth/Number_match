@@ -43,9 +43,9 @@ function initBtn(){
     resetBtn.addEventListener("click", function() {
         localStorage.removeItem("backclr");
         localStorage.removeItem("borderclr");
-        localStorage.removeItem("valNum");
-        localStorage.removeItem("deadNum");
-        localStorage.removeItem("clu");
+        localStorage.removeItem("validnumberclr");
+        localStorage.removeItem("deadnmbclr");
+        localStorage.removeItem("clueclr");
 
         let menuPan= document.getElementById("menu");
         menuPan.style.display="none"
@@ -61,15 +61,15 @@ function initBtn(){
     });
 
     valNum.addEventListener('input', function() {
-        localStorage.setItem("valNum", hexToRgb(this.value));
+        localStorage.setItem("validnumberclr", hexToRgb(this.value));
     });
 
     deadNum.addEventListener('input', function() {
-        localStorage.setItem("deadNum", hexToRgb(this.value));
+        localStorage.setItem("deadnmbclr", hexToRgb(this.value));
     });
 
     clu.addEventListener('input', function() {
-        localStorage.setItem("clu", hexToRgb(this.value));
+        localStorage.setItem("clueclr", hexToRgb(this.value));
     });
 
     
