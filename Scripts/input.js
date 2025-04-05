@@ -4,12 +4,18 @@ function initBtn(){
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
     const backBtn = document.getElementById("back");
+    const optBtn = document.getElementById("opt");
     
     backBtn.addEventListener("click", function() {
         ga.saveGame();
         window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
     });
-    
+
+    optBtn.addEventListener("click", function() {
+        let menuPan= document.getElementById("menue");
+        menuPan.style.display="block"
+    });
+
     addBtn.addEventListener("click", function() {
         addBtn.setAttribute('status',0);
         if (ga.getLife()>0){ 

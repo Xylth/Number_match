@@ -21,6 +21,19 @@ body {
     background-color: var(--bck-color);
 }
 
+#menu {
+    display: none; /* Invisible par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage */
+    background-color: white;
+    border: 1px solid #000000;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+  }
+
 #topBand {
     background-color: var(--bck-color);
     height: 20dvh; /* 20% de la hauteur de l'écran */
