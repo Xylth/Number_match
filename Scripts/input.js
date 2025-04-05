@@ -23,7 +23,7 @@ function initBtn(){
 
     optBtn.addEventListener("click", function() {
         let menuPan= document.getElementById("menu");
-        menuPan.style.display="block"
+        menuPan.style.display="block";
     });
 
     addBtn.addEventListener("click", function() {
