@@ -101,7 +101,7 @@ body {
 }
 
 #content {
-    width: 80dvw; /* 80% de la largeur de l’écran */
+    width: 66dvw; /* 80% de la largeur de l’écran */
     display: flex;
     justify-content: center; /* Centre le contenu principal */
     height: 100vh;
