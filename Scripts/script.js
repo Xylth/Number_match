@@ -41,6 +41,7 @@ window.onload = function() {
     launch_game();
     if (localStorage.getItem("game") ==="n"){
         localStorage.setItem("game", "o");
+        gr.fillgrid();
     }
     else{
         ga.restoreGame()
