@@ -41,10 +41,9 @@ window.onload = function() {
     launch_game();
     if (localStorage.getItem("game") ==="n"){
         localStorage.setItem("game", "o");
-        gr.fillgrid();
     }
     else{
-        ga.restoreGame()
+        ga.restoreGame();
     }
     init_custom();
 };
@@ -62,6 +61,8 @@ function launch_game() {
 function init_global(){
     ga = new game();
     gr= ga.getChain();
+    gr.fillgrid();
+
     initBtn();
     ga.setHighScore(localStorage.getItem("highscore"));
 }
