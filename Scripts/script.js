@@ -61,7 +61,7 @@ function launch_game() {
 function init_global(){
     ga = new game();
     gr= ga.getChain();
-    gr.fillgrid();
+    gr.fillGrid();
 
     initBtn();
     ga.setHighScore(localStorage.getItem("highscore"));
