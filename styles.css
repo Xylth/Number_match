@@ -1,18 +1,18 @@
 /* styles.css */
 
-.demo img{
+.demo {
     height: 30 dvw;
     width: 30 dvw;
     object-fit: cover; /* Crop l’image si besoin */
 }
 
-.demo2 img{
+.demo2 {
     height: 30 dvw;
     width: 66 dvw;
     object-fit: cover; /* Crop l’image si besoin */
 }
 
-.demo3 img{
+.demo3 {
     height: 10 dvw;
     width: 10 dvw;
     object-fit: cover; /* Crop l’image si besoin */
