@@ -1,19 +1,19 @@
 /* styles.css */
 
 .demo{
-    height: 33dvh;
-    width: 33dvw;
+    height: 30%;
+    width: 30%;
     overflow:hidden; /* Empêche le défilement */
 };
 
 .demo2{
-    height: 10dvh;
-    width: 50dvw;
+    height: 10%;
+    width: 50%;
     overflow:hidden; /* Empêche le défilement */
 };
 
 .demo3{
-    height: 10dvh;
-    width: 10dvw;
+    height: 10%;
+    width: 10%;
     overflow:hidden; /* Empêche le défilement */
 };
