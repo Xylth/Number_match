@@ -1,18 +1,18 @@
 /* styles.css */
 
-.demo{
+.demo img{
     height: 30%;
     width: 30%;
     overflow:hidden; /* Empêche le défilement */
 };
 
-.demo2{
+.demo2 img{
     height: 10%;
     width: 50%;
     overflow:hidden; /* Empêche le défilement */
 };
 
-.demo3{
+.demo3 img{
     height: 10%;
     width: 10%;
     overflow:hidden; /* Empêche le défilement */
