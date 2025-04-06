@@ -10,6 +10,9 @@ window.onload = function() {
     diff =3;
 
     
+    localStorage.setItem("level",diff);
+
+    
     if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)){
         last.style.display = "none"; 
     }
@@ -55,5 +58,6 @@ window.onload = function() {
               diff=1;
               break;
         }
+        localStorage.setItem("level",diff);
     });
 };

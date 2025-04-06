@@ -2,7 +2,7 @@ class game{
 
     constructor(){
         this.base_life=5;
-        this.level=3;
+        this.level=Number(localStorage.getItem("level"));
         this.initGameData();
         this.chain = new grid();
 
