@@ -5,7 +5,6 @@ class game{
         this.level=3;
         this.initGameData();
         this.chain = new grid();
-        this.chain.fillGrid(this.level);
 
     }
 
@@ -30,7 +29,7 @@ class game{
     nextStep(){
         this.resetLife();
         this.addStep();
-        this.chain.fillGrid(this.level);
+        this.chain.fillGrid();
     }
 
     getScore(){
