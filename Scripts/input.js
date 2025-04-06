@@ -1,12 +1,15 @@
 let selectedElement=[];
+let debug;
 
 function initBtn(){
+    debug =0;
     const addBtn = document.getElementById("addBtn");
     const helpBtn = document.getElementById("help");
     const backBtn = document.getElementById("back");
     const optBtn = document.getElementById("opt");
     const resetBtn = document.getElementById("restore");
     const aplBtn = document.getElementById("apply");
+    const step = document.getElementById("step");
 
     const bck= document.getElementById("bck");
     const brd= document.getElementById("brd");
@@ -37,6 +40,17 @@ function initBtn(){
     helpBtn.addEventListener("click", function() {
     
         help();
+    });
+
+    step.addEventListener("click", function() {
+    
+        if (debug<5){
+            debug++;
+        }
+        else {
+            debug=0;
+        }
+
     });
 
     
@@ -96,7 +110,7 @@ function selection_cell(el){
             selectedElement.push(el); 
             break;
     }
-    if (selectedElement.length===2){
+    if ((selectedElement.length===2)&&(debug!==5)){
         check_input();
         clear_help();
     }
