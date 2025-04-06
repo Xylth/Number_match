@@ -45,13 +45,13 @@ window.onload = function() {
     lvl.addEventListener('change', function() {
         diff = this.value;
         switch (diff) {
-            case "Facile":
+            case "easy":
                 diff=3;
               break;
-            case "Moyen":
+            case "medium":
                 diff=2;
               break;
-            case "Difficile":
+            case "hard":
               diff=1;
               break;
         }
