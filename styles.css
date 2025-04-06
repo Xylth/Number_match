@@ -1,0 +1,18 @@
+/* styles.css */
+
+demo{
+    height: 33dvh;
+    width: 33dvw;
+    overflow:hidden; /* Empêche le défilement */
+};
+
+demo2{
+    height: 10dvh;
+    width: 50dvw;
+    overflow:hidden; /* Empêche le défilement */
+};
+demo3{
+    height: 10dvh;
+    width: 10dvw;
+    overflow:hidden; /* Empêche le défilement */
+};
