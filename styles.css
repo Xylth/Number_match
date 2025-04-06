@@ -3,15 +3,18 @@
 .demo img{
     height: 100px;
     object-fit: cover; /* Crop l’image si besoin */
+    display: none;
 };
 
 .demo2 img{
     height: 100px;
     object-fit: cover; /* Crop l’image si besoin */
+    display: none;
 };
 
 .demo3 img{
     height: 50px;
     object-fit: cover; /* Crop l’image si besoin */
+    display: none;
     
 };
