@@ -119,6 +119,7 @@ function check_grid(){
     let buf = gr.getElementChain(0);
     if (buf.getStatus()===0){
         ga.addScore(150*ga.getStep());
+        ga.addScore(50*ga.step()*ga.getLife());
         ga.nextStep();
     }
 }
