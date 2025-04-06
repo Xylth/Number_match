@@ -2,18 +2,16 @@
 
 .demo img{
     height: 100px;
-    width: 100px;
     object-fit: cover; /* Crop l’image si besoin */
 };
 
 .demo2 img{
     height: 100px;
-    width: 500px;
     object-fit: cover; /* Crop l’image si besoin */
 };
 
 .demo3 img{
     height: 50px;
-    width: 50px;
     object-fit: cover; /* Crop l’image si besoin */
+    
 };
