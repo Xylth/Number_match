@@ -175,18 +175,12 @@ class grid{
         return output;
     }
     
-
-    SetChainExport(grid){
-        let element_exp = {
-            value : 0,
-            status : 0
-        };
-
-        for (let i = 0; i<grid.length;i++){
-            element_exp = grid[i];
-            let element =this.getElementChain(i);
-            element.setValue(Number(element_exp.getValue()));
-            element.setStatus(Number(element_exp.getStatus()));
+    SetChainExport(grid) {
+        for (let i = 0; i < grid.length; i++) {
+            const element_exp = grid[i];
+            const element = this.getElementChain(i);
+            element.setValue(Number(element_exp.value));
+            element.setStatus(Number(element_exp.status));
         }
     }
 }
