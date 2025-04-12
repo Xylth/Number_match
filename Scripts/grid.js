@@ -164,8 +164,8 @@ class grid{
             element_exp.value= element.getValue();
             element_exp.status= element.getStatus();
             if (element_exp.status!==0){
-                output.push(value: element_exp.value,
-                    status: element_exp.status);
+                output.push(element_exp.value,
+                    element_exp.status);
             }
             i++;
         }while (element_exp.status!==0);
