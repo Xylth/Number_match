@@ -1,20 +1,29 @@
 /* styles.css */
-
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    
+    justify-content: center; /* Centre horizontalement */
+}
 .demo {
-    height: 30 dvw;
-    width: 30 dvw;
-    object-fit: cover; /* Crop l’image si besoin */
+    height: 30dvh; /* 15% de la hauteur de l'écran */
+    width: 100%; /* Toute la largeur */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content:space-evenly; /* Aligne horizontalement le contenu */
 }
 
 .demo2 {
-    height: 30 dvw;
+    height: auto;
     width: 66 dvw;
-    object-fit: cover; /* Crop l’image si besoin */
 }
 
 .demo3 {
-    height: 10 dvw;
-    width: 10 dvw;
-    object-fit: cover; /* Crop l’image si besoin */
+    height: auto;
+    width: 30 dvw;
     
 }
