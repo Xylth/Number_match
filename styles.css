@@ -19,7 +19,7 @@ body {
 
 
 .demo {
-    height: 30dvh; /* 15% de la hauteur de l'écran */
+    height: 30dvw; /* 15% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
     display: flex; /* Flexbox pour aligner le contenu */
     flex-direction: row;
@@ -27,12 +27,18 @@ body {
     justify-content:space-evenly; /* Aligne horizontalement le contenu */
 }
 
-.demo2 {
+.demo img{
+    height : 30 vw;
+    width: auto;
+    
+}
+
+.demo2 img{
     height: auto;
     width: 66 dvw;
 }
 
-.demo3 {
+.demo3 img{
     height: auto;
     width: 15 dvw;
     
