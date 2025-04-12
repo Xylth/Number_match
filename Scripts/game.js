@@ -16,13 +16,14 @@ class game{
     }
 
     resetGameData(){
-        localStorage.removeItem("life");
+        let data = JSON.parse(localStorage.getItem("savedGame"));
+        data.life=0;//localStorage.removeItem("life");
         
-        localStorage.removeItem("step");
+        data.step = 0;//localStorage.removeItem("step");
         
-        localStorage.removeItem("score");
+        data.score=0;//localStorage.removeItem("score");
 
-        localStorage.removeItem("level");
+        data.level=0;//localStorage.removeItem("level");
 
     }
 
@@ -169,12 +170,6 @@ class game{
           grid : this.chain.getChainExport()
         };
         localStorage.setItem("savedGame",JSON.stringify(game_data));
-        localStorage.setItem("score", this.getScore());
-        localStorage.setItem("life", this.getLife());
-        localStorage.setItem("step", this.getStep());
-        localStorage.setItem("level",this.getLevel());
-        this.chain.export_status();
-        this.chain.export_value();
     }
 
     restoreGame(){
@@ -191,24 +186,6 @@ class game{
         else {
             reset_global();
         }
-        /*if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
-            reset_global();
-        }
-        else {
-            this.setLife(Number(localStorage.getItem("life")));
-            this.setScore(Number(localStorage.getItem("score")));
-            this.setStep(Number(localStorage.getItem("step")));
-            this.setLevel(Number(localStorage.getItem("level")));
-            this.chain.clear_grid();
-            let buf_val =localStorage.getItem("grid_val");
-            let buf_sta =localStorage.getItem("grid_sta");
-            for (let i =0;i<buf_val.length;i++){
-                let buf = this.chain.getElementChain(i);
-                buf.setValue(Number(buf_val[i]));
-                buf.setStatus(Number(buf_sta[i]));
-
-            }        
-        }*/
     }
 }
 

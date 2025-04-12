@@ -73,8 +73,5 @@ function reset_global(){
 
 }
 
-function resized(){
-   
-}
 
 

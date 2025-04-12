@@ -11,9 +11,7 @@ class grid{
                 let cell = document.createElement('td'); // Crée une cellule
                 let el = new element(cell);
                 el.setCoordinates(i,j);
-                //cell.addEventListener("click", function() {
-                //    selection_cell(cell);
-                //});
+                
                 row.appendChild(cell); // Ajoute la cellule à la ligne
                 this.chain.push(el);
             }
@@ -131,26 +129,6 @@ class grid{
             buf.setStatus(bufNext.getStatus());
         }
     }   
-
-    export_value(){
-        let str="";
-        let i=0;
-        while (this.chain[i].getValue()!==0){
-            str+=this.chain[i].getValue();
-            i++;
-        }
-        localStorage.setItem("grid_val", str);
-    }
-    
-    export_status(){
-        let str="";
-        let i=0;
-        while (this.chain[i].getStatus()!==0){
-            str+=this.chain[i].getStatus();
-            i++;
-        }
-        localStorage.setItem("grid_sta", str);
-    }
 
     getChainExport() {
         let output = [];

@@ -12,8 +12,10 @@ window.onload = function() {
     
     localStorage.setItem("level",diff);
 
+    const game_data = localStorage.getItem("savedGame");
+
+    if (!game_data) {
     
-    if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)){
         last.style.display = "none"; 
     }
 
