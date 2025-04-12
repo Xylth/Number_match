@@ -8,6 +8,16 @@ body {
     
     align-items: center; /* Centre horizontalement */
 }
+.mode{
+    height: 10dvh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content:space-evenly; /* Aligne horizontalement le contenu */
+}
+
+
 .demo {
     height: 30dvh; /* 15% de la hauteur de l'écran */
     width: 100%; /* Toute la largeur */
