@@ -152,25 +152,29 @@ class grid{
         localStorage.setItem("grid_sta", str);
     }
 
-    getChainExport(){
-        let element_exp = {
-            value : 0,
-            status : 0
-        };
-        let output=[];
-        let i =0;
-        do{
-            let element = this.getElementChain(i);
-            element_exp.value= element.getValue();
-            element_exp.status= element.getStatus();
-            if (element_exp.status!==0){
-                output.push(element_exp.value,
-                    element_exp.status);
+    getChainExport() {
+        let output = [];
+        let i = 0;
+        let status = 0;
+    
+        do {
+            const element = this.getElementChain(i);
+            const value = element.getValue();
+            status = element.getStatus();
+    
+            if (status !== 0) {
+                output.push({
+                    value: value,
+                    status: status
+                });
             }
+    
             i++;
-        }while (element_exp.status!==0);
+        } while (status !== 0);
+    
         return output;
     }
+    
 
     SetChainExport(grid){
         let element_exp = {
