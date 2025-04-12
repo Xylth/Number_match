@@ -170,4 +170,18 @@ class grid{
         }while (element_exp.status!==0);
         return output;
     }
+
+    SetChainExport(grid){
+        let element_exp = {
+            value : 0,
+            status : 0
+        };
+
+        for (let i = 0; i<grid.length();i++){
+            element_exp = grid[i];
+            let element =this.getElementChain(i);
+            element.setValue(Number(element_exp.getValue()));
+            element.setStatus(Number(element_exp.getStatus()));
+        }
+    }
 }

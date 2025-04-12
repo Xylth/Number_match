@@ -178,7 +178,20 @@ class game{
     }
 
     restoreGame(){
-        if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
+        const game_data = localStorage.getItem("savedGame");
+
+        if (game_data) {
+            const data = JSON.parse(game_data);
+            this.setLevel(Number(data.level));
+            this.setLife(Number(data.life));
+            this.setScore(Number(data.score));
+            this.setStep(Number(data.step));
+            this.chain.SetChainExport(data.grid);
+        }
+        else {
+            reset_global();
+        }
+        /*if ((localStorage.getItem("score") === null)||(localStorage.getItem("grid_val") === null)||(localStorage.getItem("grid_sta") === null)||(localStorage.getItem("life") === null)||(localStorage.getItem("step") === null)) {
             reset_global();
         }
         else {
@@ -195,7 +208,7 @@ class game{
                 buf.setStatus(Number(buf_sta[i]));
 
             }        
-        }
+        }*/
     }
 }
 
