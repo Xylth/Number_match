@@ -151,4 +151,23 @@ class grid{
         }
         localStorage.setItem("grid_sta", str);
     }
+
+    getChainExport(){
+        let element_exp = {
+            value : 0,
+            status : 0
+        };
+        let output=[];
+        let i =0;
+        do{
+            let element = this.getElementChain(i);
+            element_exp.value= element.getValue();
+            element_exp.status= element.getStatus();
+            if (element_exp.status!==0){
+                output.push(element_exp);
+            }
+            i++;
+        }while (element_exp.status!==0);
+        return output;
+    }
 }

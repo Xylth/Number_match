@@ -161,6 +161,14 @@ class game{
     }
 
     saveGame(){
+        let game_data={
+          score : this.getScore(),
+          life : this.getLife(),
+          step : this.getStep(),
+          level : this.getLevel(),
+          grid : this.chain.getChainExport()
+        };
+        localStorage.setItem("savedGame",JSON.stringify(game_data));
         localStorage.setItem("score", this.getScore());
         localStorage.setItem("life", this.getLife());
         localStorage.setItem("step", this.getStep());
