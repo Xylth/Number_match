@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     height: 100dvh;
     
-    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre horizontalement */
 }
 .demo {
     height: 30dvh; /* 15% de la hauteur de l'écran */
@@ -24,6 +24,6 @@ body {
 
 .demo3 {
     height: auto;
-    width: 30 dvw;
+    width: 15 dvw;
     
 }
