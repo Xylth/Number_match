@@ -182,7 +182,7 @@ class grid{
             status : 0
         };
 
-        for (let i = 0; i<grid.length();i++){
+        for (let i = 0; i<grid.length;i++){
             element_exp = grid[i];
             let element =this.getElementChain(i);
             element.setValue(Number(element_exp.getValue()));
