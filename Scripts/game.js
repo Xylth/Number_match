@@ -16,15 +16,7 @@ class game{
     }
 
     resetGameData(){
-        let data = JSON.parse(localStorage.getItem("savedGame"));
-        data.life=0;//localStorage.removeItem("life");
-        
-        data.step = 0;//localStorage.removeItem("step");
-        
-        data.score=0;//localStorage.removeItem("score");
-
-        data.level=0;//localStorage.removeItem("level");
-
+        localStorage.setItem("savedGame",null);
     }
 
     nextStep(){
