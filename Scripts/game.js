@@ -16,7 +16,7 @@ class game{
     }
 
     resetGameData(){
-        localStorage.setItem("savedGame",null);
+        localStorage.setItem("savedGame","null");
     }
 
     nextStep(){
@@ -167,7 +167,7 @@ class game{
     restoreGame(){
         const game_data = localStorage.getItem("savedGame");
 
-        if (game_data!==null) {
+        if (game_data!=="null") {
             const data = JSON.parse(game_data);
             this.setLevel(Number(data.level));
             this.setLife(Number(data.life));
