@@ -14,7 +14,7 @@ window.onload = function() {
 
     const game_data = localStorage.getItem("savedGame");
 
-    if (!game_data) {
+    if (game_data===null) {
     
         last.style.display = "none"; 
     }

@@ -167,7 +167,7 @@ class game{
     restoreGame(){
         const game_data = localStorage.getItem("savedGame");
 
-        if (game_data) {
+        if (game_data!==null) {
             const data = JSON.parse(game_data);
             this.setLevel(Number(data.level));
             this.setLife(Number(data.life));
