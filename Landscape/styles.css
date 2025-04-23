@@ -198,20 +198,12 @@ td[status="0"]{/* vide */
     color: var(--bck-color);
 }
 
-td[status="1"][pair="1"]{/* inactif valide pair*/
-    background-color:var(--bck-color-pair); /* Couleur pour visualisation */
-    color: var(--valnmb-color);
-    font-size: 4vw;
-}
-
-td[status="1"][pair="0"]{/* inactif valide impair*/
-    background-color:var(--bck-color-impair); /* Couleur pour visualisation */
+td[status="1"]{/* inactif valide pair*/
     color: var(--valnmb-color);
     font-size: 4vw;
 }
 
 td[status="2"]{ /* inactif invalide */
-    background-color:var(--bck-color); /* Couleur pour visualisation */
     color: var(--deadnmb-color);
     font-size: 3vw;
 }
@@ -235,6 +227,8 @@ td[status="5"]{ /* fail */
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
     animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
 }
+
+
 
 
 /* Définition de l'animation */
