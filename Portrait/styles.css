@@ -2,6 +2,8 @@
 
 :root {
     --bck-color: rgb(255, 255, 255);
+    --bck-color-pair: rgb(255, 255, 255);
+    --bck-color-impair: rgb(230, 230, 255);
     --border-color : rgb(0,0,0);
     --valnmb-color : rgb(0,0,0);
     --deadnmb-color : rgb(164,164,164);
@@ -238,12 +240,17 @@ td[status="0"]{/* vide */
     color: var(--bck-color);
 }
 
-td[status="1"]{/* inactif valide */
-    background-color:var(--bck-color);/* Couleur pour visualisation */
+td[status="1"][pair="1"]{/* inactif valide pair*/
+    background-color:var(--bck-color-pair); /* Couleur pour visualisation */
     color: var(--valnmb-color);
     font-size: 4vw;
 }
 
+td[status="1"][pair="0"]{/* inactif valide impair*/
+    background-color:var(--bck-color-impair); /* Couleur pour visualisation */
+    color: var(--valnmb-color);
+    font-size: 4vw;
+}
 td[status="2"]{ /* inactif invalide */
     background-color:var(--bck-color); /* Couleur pour visualisation */
     color: var(--deadnmb-color);

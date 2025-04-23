@@ -4,6 +4,7 @@ class element{
         this.row=0;
         this.col=0;
         this.chainId=0;
+        this.pair=0;
         this.setValue(0);
         this.cell.addEventListener("click", () => {
             selection_cell(this); 
@@ -57,6 +58,12 @@ class element{
 
     setChainId(val){
         this.chainId=val;
+        if (val % 2 !==0){
+            this.pair=0;
+        }else{
+            this.pair=1;
+        }
+
         this.row=Math.floor(val / 9);
         this.col= val%9;
     }
@@ -65,5 +72,10 @@ class element{
         this.row=row;
         this.col=col;
         this.chainId=row*9+col;
+        if (this.chainId % 2 !==0){
+            this.pair=0;
+        }else{
+            this.pair=1;
+        }
     }
 }
