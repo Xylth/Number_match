@@ -14,7 +14,7 @@ class grid{
                 el.setCoordinates(i,j);
                 el.setPair(pair);
                 pair++;
-                if(pair<1){
+                if(pair>1){
                     pair=0;
                 }
                 row.appendChild(cell); // Ajoute la cellule à la ligne
