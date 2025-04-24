@@ -234,25 +234,23 @@ body {
     justify-content: center; /* Aligne horizontalement le contenu */
     font-size: 4vw;
 }
+td[pair="0"]{
+    background-color: var(--bck-color-impair);
+}
 
+td[pair="1"]{
+    background-color: var(--bck-color-pair);
+}
 td[status="0"]{/* vide */
-    background-color: var(--bck-color); /* Couleur pour visualisation */
     color: var(--bck-color);
 }
 
-td[status="1"][pair="1"]{/* inactif valide pair*/
-    background-color:var(--bck-color-pair); /* Couleur pour visualisation */
+td[status="1"]{/* inactif valide pair*/
     color: var(--valnmb-color);
     font-size: 4vw;
 }
 
-td[status="1"][pair="0"]{/* inactif valide impair*/
-    background-color:var(--bck-color-impair); /* Couleur pour visualisation */
-    color: var(--valnmb-color);
-    font-size: 4vw;
-}
 td[status="2"]{ /* inactif invalide */
-    background-color:var(--bck-color); /* Couleur pour visualisation */
     color: var(--deadnmb-color);
     font-size: 3vw;
 }
@@ -270,7 +268,6 @@ td[status="4"]{ /* indice */
 }
 
 td[status="5"]{ /* fail */
-    background-color: var(--bck-color); /* Couleur pour visualisation */
     color:  var(--valnmb-color);
     font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */

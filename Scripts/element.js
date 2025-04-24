@@ -35,6 +35,10 @@ class element{
         return this.cell;
     }
 
+    setPair(val){
+        this.cell.setAttribute('pair',val);
+    }
+
     setValue(val){
         if ((val>0)&&(val<10)){
             this.value=val;
@@ -58,11 +62,6 @@ class element{
 
     setChainId(val){
         this.chainId=val;
-        if (val % 2 !==0){
-            this.pair=0;
-        }else{
-            this.pair=1;
-        }
 
         this.row=Math.floor(val / 9);
         this.col= val%9;
@@ -72,10 +71,5 @@ class element{
         this.row=row;
         this.col=col;
         this.chainId=row*9+col;
-        if (this.chainId % 2 !==0){
-            this.pair=0;
-        }else{
-            this.pair=1;
-        }
     }
 }

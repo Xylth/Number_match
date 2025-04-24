@@ -3,6 +3,7 @@ class grid{
     constructor(){
         this.chain=[];
         const tableBody = document.querySelector('.grid-table tbody');
+        let pair = 0;
         // Générer 114 lignes avec 9 colonnes
         for (let i = 0; i <= 113; i++) {
             let row = document.createElement('tr'); // Crée une ligne
@@ -11,7 +12,11 @@ class grid{
                 let cell = document.createElement('td'); // Crée une cellule
                 let el = new element(cell);
                 el.setCoordinates(i,j);
-                
+                el.setPair(pair);
+                pair++;
+                if(pair<1){
+                    pair=0;
+                }
                 row.appendChild(cell); // Ajoute la cellule à la ligne
                 this.chain.push(el);
             }

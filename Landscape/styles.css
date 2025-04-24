@@ -193,8 +193,14 @@ body {
     font-size: 4vw;
 }
 
+td[pair="0"]{
+    background-color: var(--bck-color-impair);
+}
+
+td[pair="1"]{
+    background-color: var(--bck-color-pair);
+}
 td[status="0"]{/* vide */
-    background-color: var(--bck-color); /* Couleur pour visualisation */
     color: var(--bck-color);
 }
 
@@ -221,7 +227,6 @@ td[status="4"]{ /* indice */
 }
 
 td[status="5"]{ /* fail */
-    background-color: var(--bck-color); /* Couleur pour visualisation */
     color: var(--valnmb-color);
     font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
