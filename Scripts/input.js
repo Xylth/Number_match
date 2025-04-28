@@ -1,5 +1,6 @@
 let selectedElement=[];
 let debug;
+let colors;
 
 function initBtn(){
     debug =0;
@@ -21,7 +22,7 @@ function initBtn(){
     
     backBtn.addEventListener("click", function() {
         ga.saveGame();
-        window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
+        window.location.href = menu;
     });
 
     optBtn.addEventListener("click", function() {

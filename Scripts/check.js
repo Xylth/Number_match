@@ -144,5 +144,5 @@ function gameOver(){
         localStorage.setItem("highscore", ga.getScore());
     }
     reset_global();
-    window.location.href = "https://xylth.github.io/Number_match/"; // Remplace par ton URL
+    window.location.href = menu;
 }

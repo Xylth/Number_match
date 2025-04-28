@@ -12,12 +12,12 @@ window.onload = function() {
         if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
             layout="l";
             localStorage.setItem("layout", layout);
-            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+            window.location.href = landscape;
         }
         else{
             layout="p";
             localStorage.setItem("layout", layout);
-            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+            window.location.href = portrait;
         }
     });
     
@@ -27,14 +27,14 @@ window.onload = function() {
             localStorage.setItem("game", "o");
             layout="l";
             localStorage.setItem("layout", layout);
-            window.location.href = "https://xylth.github.io/Number_match/Landscape/game.html";
+            window.location.href = landscape;
     
         } else  if ((window.innerWidth < window.innerHeight)&&(layout==="l")){ //portrait
             ga.saveGame();
             localStorage.setItem("game", "o");
             layout="p";
             localStorage.setItem("layout", layout);
-            window.location.href = "https://xylth.github.io/Number_match/Portrait/game.html";
+            window.location.href = portrait;
         }
     });
 
