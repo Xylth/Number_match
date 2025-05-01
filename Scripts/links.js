@@ -1,4 +1,4 @@
-const isTest = true;
+const isTest = false;
 
 const dataStrTest = "test_data";
 
