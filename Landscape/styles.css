@@ -134,7 +134,7 @@ body {
     position: absolute;  /* Positionnement absolu par rapport à `.botElement` */
     top: 0;              /* L'élément est collé en haut du conteneur */
     right: 0;             /* L'élément est collé à gauche du conteneur */
-    background-color: rgba(0, 0, 0, 0.75);  /* Optionnel : couleur de fond semi-transparente */
+    background-color: var(--btn-color);  /* Optionnel : couleur de fond semi-transparente */
     color: var(--bck-color);       /* Texte en blanc */
     padding: 1dvh;        /* Un peu de padding autour du texte */
     border-radius: 50%;  /* Pour rendre le tag circulaire */

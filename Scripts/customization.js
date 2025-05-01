@@ -15,7 +15,12 @@ function init_custom(){
     document.documentElement.style.setProperty("--selnmb-color",data.colors.selnmbcolor);
     document.documentElement.style.setProperty("--cluenmb-color",data.colors.cluenmbcolor);
     document.documentElement.style.setProperty("--failnmb-color",data.colors.failnmbcolor);
-
+    const images = document.querySelectorAll(".btn-img");
+    const newColor = rgbStringToObject(data.colors.btncolor);
+  
+    images.forEach(img => {
+        recolorImage(img, newColor);
+    });
 
     saveData();
 }

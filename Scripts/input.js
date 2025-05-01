@@ -100,6 +100,38 @@ function selection_cell(el){
     }
 }
 
+function recolorImage(imgElement, newColor) {
+    const originalSrc = imgElement.dataset.originalSrc;
+  
+    const baseImg = new Image();
+    baseImg.crossOrigin = "anonymous"; // utile si l'image vient d’un autre domaine
+    baseImg.src = originalSrc + "?t=" + Date.now(); // évite le cache
+  
+    baseImg.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = baseImg.naturalWidth;
+      canvas.height = baseImg.naturalHeight;
+      const ctx = canvas.getContext("2d");
+  
+      ctx.drawImage(baseImg, 0, 0);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+  
+      for (let i = 0; i < data.length; i += 4) {
+        const [r, g, b, a] = [data[i], data[i + 1], data[i + 2], data[i + 3]];
+        if (r < 20 && g < 20 && b < 20 && a > 0) {
+          data[i] = newColor.r;
+          data[i + 1] = newColor.g;
+          data[i + 2] = newColor.b;
+        }
+      }
+  
+      ctx.putImageData(imageData, 0, 0);
+      imgElement.src = canvas.toDataURL();
+    };
+  }
+
+
 function hexToRgb(hex) {
     // Supprime le "#" si présent
     hex = hex.replace("#", "");
@@ -120,4 +152,14 @@ function hexToRgb(hex) {
     }).join('');
 }
 
+
+function rgbStringToObject(rgbStr) {
+    const match = rgbStr.match(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)/);
+    if (!match) return { r: 0, g: 0, b: 0 }; // fallback
+    return {
+      r: parseInt(match[1]),
+      g: parseInt(match[2]),
+      b: parseInt(match[3])
+    };
+  }
 
