@@ -2,12 +2,20 @@
 
 :root {
     --bck-color: rgb(255, 255, 255);
-    --bck-color-pair: rgb(255, 255, 255);
-    --bck-color-impair: rgb(230, 230, 255);
+    --score-color:rgb(0,0,0);
+    --subtxt-color:rgb(164,164,164);
+    --btn-color:rgb(0,0,0);
     --border-color : rgb(0,0,0);
+    --bckpair-color: rgb(255, 255, 255);
+    --bckimpair-color: rgb(230, 230, 255);
+    --selection-color : rgb(122, 217, 255);
+    --clue-color : rgb(50, 186, 68);
+    --fail-color : rgb(255,0,0);
     --valnmb-color : rgb(0,0,0);
     --deadnmb-color : rgb(164,164,164);
-    --clue-color : rgb(50, 186, 68);
+    --selnmb-color : rgb(0, 0, 0);
+    --cluenmb-color : rgb(0, 0, 0);
+    --failnmb-color : rgb(0, 0, 0);
 }
 
 
@@ -34,9 +42,9 @@ body {
     padding: 20px;
     z-index: 1000;
     border-radius: 10px;
-    max-width: 90vw;
-    max-height: 90vh;
-    overflow: auto;
+    max-width: 90dvw;
+    max-height: 90dvh;
+    overflow-y: auto; /* Permet au contenu de défiler verticalement */
   }
 
 .menu_line {
@@ -105,6 +113,7 @@ body {
 #score {
     grid-column: 2;
     grid-row: 2;
+    color: var(--score-color);
     justify-content: center; /* Par défaut : centre horizontal */
 }
 
@@ -128,7 +137,7 @@ body {
 .subTopElement{
     font:normal;
     font-size: 2dvh;
-    color:gray;
+    color:var(--subtxt-color);
 }
 
 #botBand {
@@ -228,18 +237,18 @@ body {
     aspect-ratio: 1 / 1; /* Hauteur égale à la largeur pour chaque cellule */
     font-weight: bold;
     
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     display: flex; /* Permet d'aligner le contenu correctement */
     align-items: center; /* Aligne verticalement le contenu */
     justify-content: center; /* Aligne horizontalement le contenu */
     font-size: 4vw;
 }
 td[pair="0"]{
-    background-color: var(--bck-color-impair);
+    background-color: var(--bckimpair-color);
 }
 
 td[pair="1"]{
-    background-color: var(--bck-color-pair);
+    background-color: var(--bckpair-color);
 }
 td[status="0"]{/* vide */
     color: var(--bck-color);
@@ -256,23 +265,26 @@ td[status="2"]{ /* inactif invalide */
 }
 
 td[status="3"]{ /* selection */
-    background-color: lightblue; /* Couleur pour visualisation */
-    color:  var(--valnmb-color);
+    background-color: var(--selection-color); /* Couleur pour visualisation */
+    color: var(--selnmb-color);
     font-size: 4vw;
 }
 
 td[status="4"]{ /* indice */
     background-color: var(--clue-color); /* Couleur pour visualisation */
-    color:  var(--valnmb-color);
+    color: var(--cluenmb-color);
     font-size: 4vw;
 }
 
 td[status="5"]{ /* fail */
-    color:  var(--valnmb-color);
+    color: var(--failnmb-color);
     font-size: 4vw;
     /*display: inline-block;  /* Nécessaire pour appliquer transform */
     animation: blinker .5s ease-in-out 3; /* L'animation dure 1 seconde et est répétée à l'infini */
 }
+
+
+
 
 /* Définition de l'animation */
 @keyframes blinker {
@@ -280,6 +292,6 @@ td[status="5"]{ /* fail */
         background-color: var(--bck-color); /* Rétablit la couleur de fond initiale */
     }
     50% {
-        background-color: red; /* Change la couleur de fond en rouge */
+        background-color: var(--fail-color); /* Change la couleur de fond en rouge */
     }
 }

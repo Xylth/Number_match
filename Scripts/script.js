@@ -1,75 +1,56 @@
 let ga;
-let gr;
-let layout;
-
-
 
 window.onload = function() {
-    layout= localStorage.getItem("layout");
+    if (localStorage.getItem(dataStr) === null) {
+        localStorage.setItem(dataStr, JSON.stringify(data));
+    } 
+    else {
+        data=JSON.parse(localStorage.getItem(dataStr));
+        sanitizeData();
+    }
     window.addEventListener("orientationchange", function() {
-        ga.saveGame();
-        localStorage.setItem("game", "o");
+        data.conf.continue="o";
         if((screen.orientation.angle===90)||(screen.orientation.angle===180)){
-            layout="l";
-            localStorage.setItem("layout", layout);
+            data.conf.layout="l";
+            saveData();
             window.location.href = landscape;
         }
         else{
-            layout="p";
-            localStorage.setItem("layout", layout);
+            data.conf.layout="p";
+            saveData();
             window.location.href = portrait;
         }
     });
     
     window.addEventListener("resize", function() {
-        if ((window.innerWidth > window.innerHeight)&&(layout==="p")) { //landscape
-            ga.saveGame();
-            localStorage.setItem("game", "o");
-            layout="l";
-            localStorage.setItem("layout", layout);
+        data.conf.continue="o";
+        if ((window.innerWidth > window.innerHeight)&&(data.conf.layout==="p")) { //landscape
+            data.conf.layout="l";
+            saveData();
             window.location.href = landscape;
     
-        } else  if ((window.innerWidth < window.innerHeight)&&(layout==="l")){ //portrait
-            ga.saveGame();
-            localStorage.setItem("game", "o");
-            layout="p";
-            localStorage.setItem("layout", layout);
+        } else  if ((window.innerWidth < window.innerHeight)&&(data.conf.layout==="l")){ //portrait
+            data.conf.layout="p";
+            saveData();
             window.location.href = portrait;
         }
     });
 
-    launch_game();
-    if (localStorage.getItem("game") ==="n"){
-        localStorage.setItem("game", "o");
+    init_global();
+
+    if (data.conf.continue ==="n"){
+        ga.newGame();
     }
     else{
         ga.restoreGame();
     }
-    init_custom();
-};
-
-function launch_game() {
-    if (localStorage.getItem("highscore") === null) {
-        localStorage.setItem("highscore", 0);
-    }
-
-   init_global();
-
-   
 };
 
 function init_global(){
     ga = new game();
-    gr= ga.getChain();
-    gr.fillGrid();
 
     initBtn();
-    ga.setHighScore(localStorage.getItem("highscore"));
-}
-
-function reset_global(){
-    ga.resetGameData();
-    gr.clear_grid();
+    init_custom();
 
 }
 

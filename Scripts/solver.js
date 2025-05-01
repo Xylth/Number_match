@@ -6,7 +6,7 @@ function Vsolver(element){
     let bufStatus=0;
     row++;
     for(let i = row;i<114;i++){
-        let buf = gr.getElementCoordinates(i,col);
+        let buf = ga.getElementCoordinates(i,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus===0){
@@ -29,7 +29,7 @@ function Hsolver(element){
     let bufStatus=0;
     col++;
     for(let i = col;i<9;i++){
-        let buf = gr.getElementCoordinates(row,i);
+        let buf = ga.getElementCoordinates(row,i);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus===0){
@@ -59,7 +59,7 @@ function Csolver(element){
                 return;
             }
         }
-        let buf = gr.getElementCoordinates(row,col);
+        let buf = ga.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus===0){
@@ -88,7 +88,7 @@ function D1solver(element){
         if ((col>8)||(row>113)){
             return;
         }
-        let buf = gr.getElementCoordinates(row,col);
+        let buf = ga.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus===0){
@@ -117,7 +117,7 @@ function D2solver(element){
         if ((col<0)||(row>113)){
             return;
         }
-        let buf = gr.getElementCoordinates(row,col);
+        let buf = ga.getElementCoordinates(row,col);
         bufValue=buf.getValue();
         bufStatus=buf.getStatus();
         if(bufStatus===0){
@@ -141,7 +141,7 @@ function globalSolver(){
     let solution=[];
     let result;
     do{
-        let buf = gr.getElementCoordinates(row,col);
+        let buf = ga.getElementCoordinates(row,col);
         bufStatus=buf.getStatus();
         if(bufStatus===0){
             return;
@@ -216,7 +216,7 @@ function clear_help(){
     let buf;
     let i=0;
     do{
-        buf=gr.getElementChain(i);
+        buf=ga.getElementChain(i);
         if(buf.getStatus()===4){
             buf.setStatus(1);
         }

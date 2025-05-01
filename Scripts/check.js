@@ -6,6 +6,7 @@ function check_input(){
     let dy;
     let dx;
 
+
     if ((a.getValue()!==b.getValue())&&((a.getValue()+ b.getValue())!==10)){
         wrongInput();
     }
@@ -15,7 +16,7 @@ function check_input(){
                 spaced=true;
             }
             for(let i = Math.min(a.getCol(),b.getCol())+1;i<Math.max(a.getCol(),b.getCol());i++){
-                let buf = gr.getElementCoordinates(a.getRow(),i);
+                let buf = ga.getElementCoordinates(a.getRow(),i);
                 if (buf.getStatus()!==2){
                     valid=false;
                     spaced=false;
@@ -28,7 +29,7 @@ function check_input(){
                 spaced=true;
             }
             for(let i = Math.min(a.getRow(),b.getRow())+1;i<Math.max(a.getRow(),b.getRow());i++){
-                let buf = gr.getElementCoordinates(i,a.getCol());
+                let buf = ga.getElementCoordinates(i,a.getCol());
                 if (buf.getStatus()!==2){
                     valid=false;
                     spaced=false;
@@ -53,7 +54,7 @@ function check_input(){
                 dx=1;
             }
             for(let i=1;i<Math.abs(a.getRow()-b.getRow());i++){
-                let buf = gr.getElementCoordinates(a.getRow()+(i*dy),a.getCol()+(i*dx));
+                let buf = ga.getElementCoordinates(a.getRow()+(i*dy),a.getCol()+(i*dx));
                 if (buf.getStatus()!==2){
                     valid=false;
                     spaced=false;
@@ -66,7 +67,7 @@ function check_input(){
                 spaced=true;
             }
             for(let i = Math.min(a.getChainId(),b.getChainId())+1;i<Math.max(a.getChainId(),b.getChainId());i++){
-                let buf = gr.getElementChain(i);
+                let buf = ga.getElementChain(i);
                 if (buf.getStatus()!==2){
                     valid=false;
                     spaced=false;
@@ -86,6 +87,7 @@ function check_input(){
             else{
                 ga.addScore(4*ga.getStep());
             }
+            ga.saveGame();
             check_line(Math.max(a.getRow(),b.getRow()));
             check_line(Math.min(a.getRow(),b.getRow()));
             selectedElement=[];
@@ -103,24 +105,26 @@ function check_input(){
 function check_line(row){
     let empty = true;
     for(let i =0;i<9;i++){
-        let buf = gr.getElementCoordinates(row,i);
+        let buf = ga.getElementCoordinates(row,i);
         if ((buf.getStatus()!==0)&&(buf.getStatus()!==2)){
             empty = false;
         }
     }
     if (empty===true){
         ga.addScore(10*ga.getStep());
-        gr.delete_line(row);
+        ga.delete_line(row);
         check_grid();
     }
 }
 
 function check_grid(){
-    let buf = gr.getElementChain(0);
+    let buf = ga.getElementChain(0);
     if (buf.getStatus()===0){
         ga.addScore(150*ga.getStep());
         ga.addScore(50*ga.getStep()*ga.getLife());
-        ga.nextStep();
+        ga.setLife(5);
+        ga.setStep(ga.getStep()+1);
+        ga.startGrid();
     }
 }
 
@@ -140,9 +144,13 @@ function wrongInput(){
 function gameOver(){
     
     alert("la partie est finie\n votre score est de "+ ga.getScore() + "points");
+
     if (ga.getScore()>ga.getHighScore()){
-        localStorage.setItem("highscore", ga.getScore());
+        let entry = data.highscores.find(e => e.mode === ga.getMode());
+
+        entry.score = ga.getScore(); // null si non trouvé
     }
-    reset_global();
+    data.gameSaved.status=0;
+    saveData();
     window.location.href = menu;
 }

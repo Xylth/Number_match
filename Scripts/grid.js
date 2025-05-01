@@ -13,8 +13,10 @@ class grid{
                 let el = new element(cell);
                 el.setCoordinates(i,j);
                 el.setPair(pair);
-                pair++;
-                if(pair>1){
+                if(pair===0){
+                    pair=1;
+                }
+                else{
                     pair=0;
                 }
                 row.appendChild(cell); // Ajoute la cellule à la ligne
@@ -25,15 +27,9 @@ class grid{
 
     }
 
-    clear_grid(){
-        for(let i = 0;i<1026;i++){
-            let buf = this.chain[i];
-            if(buf.getStatus()!==0){
-                buf.setValue(0);
-            }
-            else{
-                return;
-            }
+    clearGrid(){
+        for(let i=0;i<1026;i++){
+            this.chain[i].setValue(0);
         }
     }
 
@@ -55,115 +51,98 @@ class grid{
         }
     }
 
-    updateCnt(){
-        this.cnt= new Array(9).fill(0);
-        let i = 0;
-        let j = 0;
-        let value=0;
-        do{
-            let el = this.chain[i];
-            value = el.getValue();
-            let status = el.getStatus();
-            if ((status!==0)&&(status!==2)){
-                this.cnt[value-1]++;
-                j++;
-            }
-            i++;
-        } while((value!==0));
-        if(j===0){
-            for(let i =0;i<9;i++){
-                this.cnt[i]=ga.getLevel();
-                j+=ga.getLevel();
-            }
-            for(let i=j;i<32;i++){
-                let randomInt = Math.floor(Math.random() * 9);
-                this.cnt[randomInt]++;
-            }
+    startGrid(){
+        data.gameSaved.grid= [];
+        let buf=[];
+        let base=3;
+        switch (data.gameSaved.mode) {
+            case "facile":
+                base=3;
+                break;
+        
+            case "moyen":
+                base=2;
+                break;
+        
+            case "difficile":
+                base=1;
+                break;
+        
         }
-        return this.cnt;
+        for(let i =1;i<10;i++){
+            let bufbase = new Array(base).fill(i);
+            buf.push(...bufbase);
+        }
+        while(buf.length<32){
+            let randomInt = Math.floor(Math.random() * 9)+1;
+            buf.push(randomInt);
+        }
+        for(let i = 0 ; i<32;i++){
+            let randomInt = Math.floor(Math.random()*buf.length);
+            this.chain[i].setValue(buf[randomInt]);
+            this.chain[i].setStatus(1);
+            data.gameSaved.grid.push({ 
+                value: buf[randomInt], 
+                status: 1 
+            });
+            buf.splice(randomInt,1);
+        }
+
     }
 
-    fillGrid(){
-        this.updateCnt();
+    feedGrid(){
         let buf=[];
-        for (let i = 0;i<9;i++){
-            for(let j=0;j<this.cnt[i];j++){
-                buf.push(i+1);
+        let i = -1;
+        let el;
+        do{
+            i++;
+            el=this.chain[i].getItem();
+            if((el.status!==0)&&(el.status!==2)){
+                buf.push(el.value);
             }
-        }
-        for (let i = 0;i<1026;i++){
-            let status = this.chain[i].getStatus();
-            if (status===0){
-                if (buf.length>0){
-                    let randomInt  = Math.floor(Math.random() * buf.length);
-                    this.chain[i].setValue(buf[randomInt]);
-                    this.chain[i].setStatus(1);
-                    buf.splice(randomInt,1);
-                }
-                else{
-                    return;
-                }
-            }
+        }while(el.status!==0);
+        while(buf.length>0){
+            let randomInt = Math.floor(Math.random()*buf.length);
+            this.chain[i].setValue(buf[randomInt]);
+            this.chain[i].setStatus(1);
+            data.gameSaved.grid.push({ 
+                value: buf[randomInt], 
+                status: 1 
+            });
+            buf.splice(randomInt,1);
+            i++;
         }
     }
 
     delete_line(row){
-        let buf;
-        let bufNext;
-        do{
-            for(let i=0;i<9;i++){
-                buf=this.getElementCoordinates(row,i);
-                bufNext=this.getElementCoordinates(row+1,i)
-                buf.setValue(bufNext.getValue());
-                buf.setStatus(bufNext.getStatus());
-            }
-            row++;
-            if (row===113){
-                for(let i=0;i<9;i++){
-                    buf=this.getElementCoordinates(row,i);
-                    buf.setValue(0);
-                    
-                }
-                return;
-            }
-        }while(bufNext.getStatus()!==0);
-        for(let i=0;i<9;i++){
-            buf=this.getElementCoordinates(row,i);
-            bufNext=this.getElementCoordinates(row+1,i)
-            buf.setValue(bufNext.getValue());
-            buf.setStatus(bufNext.getStatus());
-        }
+        let index = row*9;
+        this.clearGrid();
+        data.gameSaved.grid.splice(index,9);
+        this.restoreGrid();
     }   
 
-    getChainExport() {
-        let output = [];
-        let i = 0;
-        let status = 0;
+    saveGrid() {
+        data.gameSaved.grid=[];
+        let el;
+        let i = -1;
     
         do {
-            const element = this.getElementChain(i);
-            const value = element.getValue();
-            status = element.getStatus();
-    
-            if (status !== 0) {
-                output.push({
-                    value: value,
-                    status: status
+            i++
+            el = this.chain[i].getItem();
+            
+            if (el.status !== 0) {
+                data.gameSaved.grid.push({ 
+                    value: el.value, 
+                    status: el.status 
                 });
             }
-    
-            i++;
-        } while (status !== 0);
-    
-        return output;
+        } while (el.status !== 0);
     }
     
-    SetChainExport(grid) {
-        for (let i = 0; i < grid.length; i++) {
-            const element_exp = grid[i];
-            const element = this.getElementChain(i);
-            element.setValue(Number(element_exp.value));
-            element.setStatus(Number(element_exp.status));
+    restoreGrid(){
+        for(let i=0;i<data.gameSaved.grid.length;i++){
+            this.chain[i].setValue(data.gameSaved.grid[i].value);
+            this.chain[i].setStatus(data.gameSaved.grid[i].status);
         }
     }
 }

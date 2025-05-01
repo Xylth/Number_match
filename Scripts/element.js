@@ -72,4 +72,12 @@ class element{
         this.col=col;
         this.chainId=row*9+col;
     }
+
+    getItem(){
+        let item = {
+            value: this.value,
+            status: this.status
+        };
+        return item;
+    }
 }

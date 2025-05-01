@@ -1,6 +1,4 @@
 let selectedElement=[];
-let debug;
-let colors;
 
 function initBtn(){
     debug =0;
@@ -9,15 +7,7 @@ function initBtn(){
     const backBtn = document.getElementById("back");
     const optBtn = document.getElementById("opt");
     const resetBtn = document.getElementById("restore");
-    const aplBtn = document.getElementById("apply");
-    const step = document.getElementById("step");
-
-    const bck= document.getElementById("bck");
-    const brd= document.getElementById("brd");
-    const valNum= document.getElementById("valNum");
-    const deadNum= document.getElementById("deadNum");
-    const clu= document.getElementById("clu");
-    
+    const aplBtn = document.getElementById("apply"); 
 
     
     backBtn.addEventListener("click", function() {
@@ -28,14 +18,27 @@ function initBtn(){
     optBtn.addEventListener("click", function() {
         let menuPan= document.getElementById("menu");
         menuPan.style.display="block";
+        document.getElementById("bck").value = rgbToHex(data.colors.bckcolor);
+        document.getElementById("scor").value = rgbToHex(data.colors.scorecolor);
+        document.getElementById("subtxt").value = rgbToHex(data.colors.subtxtcolor);
+        document.getElementById("btn").value = rgbToHex(data.colors.btncolor);
+        document.getElementById("brd").value = rgbToHex(data.colors.bordercolor);
+        document.getElementById("bckpair").value = rgbToHex(data.colors.bckpaircolor);
+        document.getElementById("bckimpair").value = rgbToHex(data.colors.bckimpaircolor);
+        document.getElementById("sel").value = rgbToHex(data.colors.selectioncolor);
+        document.getElementById("clu").value = rgbToHex(data.colors.cluecolor);
+        document.getElementById("fail").value = rgbToHex(data.colors.failcolor);
+        document.getElementById("valNum").value = rgbToHex(data.colors.valnmbcolor);
+        document.getElementById("deadNum").value = rgbToHex(data.colors.deadnmbcolor);
+        document.getElementById("selNum").value = rgbToHex(data.colors.selnmbcolor);
+        document.getElementById("cluNum").value = rgbToHex(data.colors.cluenmbcolor);
+        document.getElementById("failNum").value = rgbToHex(data.colors.failnmbcolor);
+
     });
 
     addBtn.addEventListener("click", function() {
         addBtn.setAttribute('status',0);
-        if (ga.getLife()>0){ 
-            gr.fillGrid();
-            ga.decLife();
-        }
+        ga.feeder();
     });
 
     helpBtn.addEventListener("click", function() {
@@ -43,53 +46,33 @@ function initBtn(){
         help();
     });
 
-    step.addEventListener("click", function() {
-    
-        if (debug<5){
-            debug++;
-        }
-        else {
-            debug=0;
-        }
-
-    });
-
     
     resetBtn.addEventListener("click", function() {
-        localStorage.removeItem("backclr");
-        localStorage.removeItem("borderclr");
-        localStorage.removeItem("validnumberclr");
-        localStorage.removeItem("deadnmbclr");
-        localStorage.removeItem("clueclr");
+        data.colors = { ...defaultColors };
+
 
         let menuPan= document.getElementById("menu");
-        menuPan.style.display="none"
+        menuPan.style.display="none";
         init_custom();
     });
-
-    bck.addEventListener('input', function() {
-        localStorage.setItem("backclr", hexToRgb(this.value));
-    });
-
-    brd.addEventListener('input', function() {
-        localStorage.setItem("borderclr", hexToRgb(this.value));
-    });
-
-    valNum.addEventListener('input', function() {
-        localStorage.setItem("validnumberclr", hexToRgb(this.value));
-    });
-
-    deadNum.addEventListener('input', function() {
-        localStorage.setItem("deadnmbclr", hexToRgb(this.value));
-    });
-
-    clu.addEventListener('input', function() {
-        localStorage.setItem("clueclr", hexToRgb(this.value));
-    });
-
     
     aplBtn.addEventListener("click", function() {
         let menuPan= document.getElementById("menu");
+        data.colors.bckcolor = hexToRgb(document.getElementById("bck").value);
+        data.colors.scorecolor = hexToRgb(document.getElementById("scor").value);
+        data.colors.subtxtcolor = hexToRgb(document.getElementById("subtxt").value);
+        data.colors.btncolor = hexToRgb(document.getElementById("btn").value);
+        data.colors.bordercolor = hexToRgb(document.getElementById("brd").value);
+        data.colors.bckpaircolor = hexToRgb(document.getElementById("bckpair").value);
+        data.colors.bckimpaircolor = hexToRgb(document.getElementById("bckimpair").value);
+        data.colors.selectioncolor = hexToRgb(document.getElementById("sel").value);
+        data.colors.cluecolor = hexToRgb(document.getElementById("clu").value);
+        data.colors.failcolor = hexToRgb(document.getElementById("fail").value);
+        data.colors.valnmbcolor = hexToRgb(document.getElementById("valNum").value);
+        data.colors.deadnmbcolor = hexToRgb(document.getElementById("deadNum").value);
+        data.colors.selnmbcolor = hexToRgb(document.getElementById("selNum").value);
+        data.colors.cluenmbcolor = hexToRgb(document.getElementById("cluNum").value);
+        data.colors.failnmbcolor = hexToRgb(document.getElementById("failNum").value);
         menuPan.style.display="none"
         init_custom();
     });
@@ -111,7 +94,7 @@ function selection_cell(el){
             selectedElement.push(el); 
             break;
     }
-    if ((selectedElement.length===2)&&(debug!==5)){
+    if (selectedElement.length===2){
         check_input();
         clear_help();
     }
@@ -128,4 +111,13 @@ function hexToRgb(hex) {
 
     return `rgb(${r}, ${g}, ${b})`;
   }
+
+  function rgbToHex(rgb) {
+    let result = rgb.match(/\d+/g);
+    return "#" + result.map(x => {
+        let hex = parseInt(x).toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }).join('');
+}
+
 
