@@ -9,6 +9,7 @@
     <script src="./Scripts/menu.js" defer></script>
     <script src="./Scripts/links.js" defer></script>
     <script src="./Scripts/data.js" defer></script>
+    <script src="./Scripts/comAPI.js" defer></script>
 </head>
 <body>
     <div class="mode">
@@ -26,6 +27,24 @@
             <option value="moyen">Moyen</option>
             <option value="difficile">Difficile</option>
         </select>
+    </div>
+    <div class="mode">
+        <button id ="ps">
+            Définir pseudo
+        </button>
+        <button id ="hs">
+            Voir meilleurs scores
+        </button>
+    </div>
+    <div id="menu">
+        <div class="menu_line">
+            <p>Pseudo</p>
+            <input type="text" id="psi" autocomplete="username" name="username">
+        </div>
+        <div class="menu_line">
+            <button id="apply">Appliquer</button>
+            <button id="restore">Reset</button>
+        </div>
     </div>
     <h1>Règles du jeu</h1>
     <p>Le but du jeu est de marquer le plus de point en éliminant des chiffres de la grille.</p>

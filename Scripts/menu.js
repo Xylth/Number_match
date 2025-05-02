@@ -3,7 +3,15 @@ window.onload = function() {
     
     const ngame = document.getElementById("ng");
 
+    const psConf = document.getElementById("ps");
+    
+    const hsBtn = document.getElementById("hs");
+
     const lvl = document.getElementById("level");
+
+    const resetBtn = document.getElementById("restore");
+
+    const aplBtn = document.getElementById("apply"); 
     
     if (localStorage.getItem(dataStr) === null) {
         localStorage.setItem(dataStr, JSON.stringify(data));
@@ -12,6 +20,12 @@ window.onload = function() {
         data=JSON.parse(localStorage.getItem(dataStr));
         sanitizeData();
     }
+
+    if (localStorage.getItem("hsdata") === null) {
+        localStorage.setItem("hsdata", JSON.stringify(hs_data));
+    } 
+    hs_data=JSON.parse(localStorage.getItem("hsdata"));
+    checkHs();
     
     lvl.value = data.gameSaved.mode;
     if(checkOldData()){
@@ -22,6 +36,30 @@ window.onload = function() {
     if (data.gameSaved.status === 0) {
         last.style.display = "none"; 
     }
+
+    psConf.addEventListener("click", function() {
+        let menuPan= document.getElementById("menu");
+        menuPan.style.display="block";
+        document.getElementById("psi").value = data.conf.pseudo;
+
+    });
+
+    hsBtn.addEventListener("click", function() {
+        window.location.href = podium;
+    });
+
+    resetBtn.addEventListener("click", function() {
+        let menuPan= document.getElementById("menu");
+        menuPan.style.display="none";
+    });
+    
+    aplBtn.addEventListener("click", function() {
+        let menuPan= document.getElementById("menu");
+        menuPan.style.display="none"
+        
+        data.conf.pseudo = document.getElementById("psi").value;
+        
+    });
 
     ngame.addEventListener("click", function() {
         data.conf.continue = "n";

@@ -17,6 +17,39 @@ body {
     justify-content:space-evenly; /* Aligne horizontalement le contenu */
 }
 
+#menu {
+    display: none; /* Invisible par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage */
+    background-color: white;
+    border: 1px solid #000000;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+    max-width: 90dvw;
+    max-height: 90dvh;
+    overflow-y: auto; /* Permet au contenu de défiler verticalement */
+  }
+
+.menu_line {
+    height: 10%; /* 10% de la hauteur du menu */
+    width:  100%; /* 100% de la largeur du menu */
+    display: flex;
+    align-items: center; /* vertical alignment */
+    justify-content: space-between; /* spacing entre éléments */
+}
+
+.menu_line p {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
+  }
+
+.menu_line input {
+    /* Appliquer des styles au <p> dans .menu_line */
+    margin: 5px; /* Par exemple, mettre le texte en rouge */
+}
 
 .demo {
     padding: 3px;
@@ -58,3 +91,58 @@ body {
     width: 15dvw;
     
 }
+
+#back{
+    width: 100%;
+    align-items: left; /* Aligne verticalement le contenu */
+
+}
+
+#back img{
+    height: 8dvh;
+    width: auto;
+}
+
+table {
+    width: 90dvw;
+    border-spacing: 2px;
+
+
+}
+
+thead {
+    background-color: #3366cc;
+    color: white;
+    font-weight: bold;
+  }
+
+  .header-row{
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement le contenu */
+    justify-content:space-between; /* Aligne horizontalement le contenu */
+  }
+
+  .header-row img {
+    width: auto;
+    height: 5dvh;
+  }
+
+  #right{
+    transform: scaleX(-1);
+    align-items: right; /* Aligne verticalement le contenu */
+  }
+
+  #left{
+    align-items: left; /* Aligne verticalement le contenu */
+  }
+
+  .header-title {
+    font-size: 5dvh;
+  }
+
+
+  tbody td {
+    background:#e9e9e9;
+    text-align: center;
+  }

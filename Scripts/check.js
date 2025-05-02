@@ -150,7 +150,30 @@ function gameOver(){
 
         entry.score = ga.getScore(); // null si non trouvé
     }
+
+    if (localStorage.getItem("hsdata") === null) {
+        localStorage.setItem("hsdata", JSON.stringify(hs_data));
+    } 
+    hs_data = JSON.parse(localStorage.getItem("hsdata"));
+
+    checkHs();
+
+    const modeIndex = gameModes.indexOf(ga.getMode());
+    let found = false;
+    if (modeIndex !== -1) {
+        if(hs_data.board[modeIndex].top.length<10){
+            sendScore();
+        }else{
+            if(hs_data.board[modeIndex].top[hs_data.board[modeIndex].top.length -1].score<=ga.getScore()){
+                sendScore();
+            }
+        }
+    }
+
+    
+
     data.gameSaved.status=0;
     saveData();
     window.location.href = menu;
 }
+

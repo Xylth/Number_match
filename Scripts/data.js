@@ -24,7 +24,8 @@ let data = {
     conf: {
         mode: "facile",
         continue: "n",
-        layout: "l"
+        layout: "l",
+        pseudo: "anonyme"
     },
 
     gameSaved: {
@@ -38,6 +39,26 @@ let data = {
         ]
     }
 };
+
+let hs_data= {
+    last_update: {
+        day : "", // Date in format "DD/MM/YYY" new Date().toLocaleDateString('fr-FR');
+        quarter : 0
+    },
+
+    board : [
+        { 
+            mode: "",
+            top: [
+                {pseudo: "", score: 0}
+            ]
+        }
+    ],
+    loading: 0,
+};
+
+const gameModes = ["facile", "moyen", "difficile"];
+
 
 let defaultColors = {
     bckcolor: "rgb(255, 255, 255)",
@@ -79,4 +100,8 @@ function sanitizeData(){
 
 function saveData(){
     localStorage.setItem(dataStr, JSON.stringify(data));
+}
+
+function saveHS(){
+    localStorage.setItem("hsdata", JSON.stringify(hs_data));
 }
